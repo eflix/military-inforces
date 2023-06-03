@@ -6,7 +6,15 @@
 }
 
 section {
-    min-height: 500px;
+    min-height: 540px;
+}
+
+.btn-orange {
+    color: #EF800F;
+}
+
+.bg-orange {
+    background-color: #EF800F;
 }
 
 /* NAV BAR */
@@ -19,6 +27,10 @@ section {
     color: #EF800F;
 }
 
+.navbar-nav .nav-link .gabung_sekarang:hover {
+    color: #000000 !important;
+}
+
 .navbar-nav .dropdown-menu {
     background-color: #000000;  
 }
@@ -29,13 +41,32 @@ section {
 }
 
 .gabung_sekarang {
-    background-color: #EF800F   ;
+    background-color: #EF800F;
 }
 
-.btn-success {
+.gabung_sekarang :hover {
+    color: #000000 !important;
+}
+
+.card-text:last-child {
+    text-decoration: none;
+}
+
+.card-text:last-child:hover {
+    color: #EF800F !important;
+}
+
+/* .btn-success {
     background-color: #44EB88;
 }
 
 .badge-success {
     background-color: #44EB88;
+} */
+
+/* FOOTER */
+
+.footer {
+    background-color: #F4F4F4;
+    height: 300;
 }

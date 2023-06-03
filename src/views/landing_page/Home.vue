@@ -5,11 +5,13 @@
     <section>
       <div class="container">
       <div class="row mt-4">
-        <div class="col-md-5">
+        <div class="col-md-5" style="padding-top:100px;">
           <div class="d-flex h-100 text-white" style="height:100px;">
             <div class="justify-content-center align-self-center">
-              <h5>SELAMAT DATANG DI</h5><hr>
-              <h1>MILITARY IN FORCES LEARNING CENTRE</h1>
+              <h5 class="btn-orange">SELAMAT DATANG DI</h5><hr>
+              <h1>MILITARY IN FORCES LEARNING CENTRE</h1><hr>
+              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi necessitatibus assumenda ea aliquid nihil, eaque atque magnam, minus reprehenderit inventore, sapiente neque eos mollitia dolores in saepe. Doloribus, quod aperiam.</p><hr>
+              <router-link class="btn btn-orange gabung_sekarang text-white" to="/register">GABUNG SEKARANG</router-link>
             </div>
           </div>
         </div>
@@ -39,10 +41,63 @@
           </div>
         </div>
       </div>
+
+      <div class="row text-white" style="margin-top:100px;">
+        <div class="col-md-4 mb-3">
+          <h5>SPESIALISASI KAMI</h5><br>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi totam voluptas iusto harum mollitia consectetur repellat veniam impedit odit. Quis placeat, illum exercitationem quo hic minima ipsa facilis. Placeat, vero.</p><br>
+          <router-link class="btn btn-orange gabung_sekarang text-white" to="/register">LIHAT LEBIH BANYAK</router-link>
+        </div>
+        <div class="col-md-4 mb-3">
+          <div class="card">
+            <img src="https://picsum.photos/417/289/?image=22" class="card-img-top" alt="...">
+            <div class="card-img-overlay text-uppercase text-white font-weight-bolder" style="margin-top:150px;">
+              <h4 class="card-title">Walt Disney Signature</h4>
+              <router-link class="card-text text-white" to="/detail">Lihat Selengkapnya</router-link>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <div class="card">
+            <img src="https://picsum.photos/417/289/?image=23" class="card-img-top" alt="...">
+            <div class="card-img-overlay text-uppercase text-white font-weight-bolder" style="margin-top:150px;">
+              <h4 class="card-title">Walt Disney Signature</h4>
+              <router-link class="card-text text-white" to="/detail">Lihat Selengkapnya</router-link>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <div class="card">
+            <img src="https://picsum.photos/417/289/?image=54" class="card-img-top" alt="...">
+            <div class="card-img-overlay text-uppercase text-white font-weight-bolder" style="margin-top:150px;">
+              <h4 class="card-title">Walt Disney Signature</h4>
+              <router-link class="card-text text-white" to="/detail">Lihat Selengkapnya</router-link>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <div class="card">
+            <img src="https://picsum.photos/417/289/?image=12" class="card-img-top" alt="...">
+            <div class="card-img-overlay text-uppercase text-white font-weight-bolder" style="margin-top:150px;">
+              <h4 class="card-title">Walt Disney Signature</h4>
+              <router-link class="card-text text-white" to="/detail">Lihat Selengkapnya</router-link>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <div class="card">
+            <img src="https://picsum.photos/417/289/?image=31" class="card-img-top" alt="...">
+            <div class="card-img-overlay text-uppercase text-white font-weight-bolder" style="margin-top:150px;">
+              <h4 class="card-title">Walt Disney Signature</h4>
+              <router-link class="card-text text-white" to="/detail">Lihat Selengkapnya</router-link>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     </section>
     
-
+    <Footer />
   </div>
 </template>
 
@@ -50,12 +105,14 @@
 // @ is an alias to /src
 import Header from '@/components/landing_page/Header.vue'
 import Navbar from '@/components/landing_page/Navbar.vue'
+import Footer from '@/components/landing_page/Footer.vue'
 
 export default {
   name: 'Home',
   components: {
     Header,
-    Navbar
+    Navbar,
+    Footer
   }
 }
 </script>

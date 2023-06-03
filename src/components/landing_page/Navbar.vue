@@ -63,24 +63,9 @@
                     <router-link class="nav-link" to="/tentang_kami">TENTANG KAMI</router-link>
                 </li>
                 <li class="nav-item mr-2 shadow ">
-                    <router-link class="nav-link gabung_sekarang" to="/gabung_sekarang">GABUNG SEKARANG</router-link>
+                    <router-link class="nav-link gabung_sekarang" to="/register">GABUNG SEKARANG</router-link>
                 </li>
             </div>
-
-        <!-- <b-nav-item href="#">BERANDA</b-nav-item> -->
-
-        <!-- Navbar dropdowns -->
-        <!-- <b-nav-item-dropdown text="Lang" right>
-            <b-dropdown-item href="#">EN</b-dropdown-item>
-            <b-dropdown-item href="#">ES</b-dropdown-item>
-            <b-dropdown-item href="#">RU</b-dropdown-item>
-            <b-dropdown-item href="#">FA</b-dropdown-item>
-        </b-nav-item-dropdown>
-
-        <b-nav-item-dropdown text="User" right>
-            <b-dropdown-item href="#">Account</b-dropdown-item>
-            <b-dropdown-item href="#">Settings</b-dropdown-item>
-        </b-nav-item-dropdown> -->
 
         </b-navbar-nav>
     </b-navbar>
