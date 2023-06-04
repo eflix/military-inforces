@@ -14,18 +14,21 @@
             <!-- <div class="col-md-2"></div> -->
             <div class="col-md-2 mt-4">
                 <h5>SITEMAP</h5>
-                <p class="">Beranda</p><br>
-                <p class="">Sekolah Kedinasan</p><br>
-                <p class="">Tentang Kami</p><br>
+                <p class="mt-4 mb-0">Beranda</p><br>
+                <p class="mb-0">Sekolah Kedinasan</p><br>
+                <p class="mb-0">Tentang Kami</p><br>
             </div>
             <div class="col-md-4 mt-4">
                 <h5>INFORMASI KONTAK</h5>
-                <p class="">Military In Forces Learning Centre</p><br>
-                <p class="">09875744848</p><br>
-                <p class="">help@militaryinforces.com</p><br>
-                <p class="">Jl. Anggrek No. 12 Jebres, Surakarta, Jawa Tengah</p><br>
+                <p class="mt-4 mb-0"><b-icon-building> </b-icon-building> Military In Forces Learning Centre</p><br>
+                <p class="mb-0"><b-icon-telephone> </b-icon-telephone> 09875744848</p><br>
+                <p class="mb-0"><b-icon-geo-envelope> </b-icon-geo-envelope> help@militaryinforces.com</p><br>
+                <p class="mb-0"><b-icon-geo-alt> </b-icon-geo-alt> Jl. Anggrek No. 12 Jebres, Surakarta, Jawa Tengah</p><br>
             </div>
         </div>
+    </div>
+    <div class="copyright text-center d-flex align-items-center justify-content-center">
+        <p class="text-white mb-0"><i class="cil-copyright"></i> 2023. Hak Cipta Oleh <span class="btn-orange">Military In Forces Learning Centre.</span> Dilindungi Undang-Undang</p>
     </div>
 </div>
   

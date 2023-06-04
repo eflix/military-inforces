@@ -96,6 +96,41 @@
       </div>
     </div>
     </section>
+
+    <section class="bg-light d-flex align-items-center">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-md-6">
+            <div class="row">
+              <div class="col-md-12">
+                <h3>TENTANG KAMI</h3>
+                <P>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi quo quod voluptatibus, voluptatum natus ab odit ullam saepe, dicta sequi iure commodi dignissimos exercitationem. Nemo, repellendus quo! Corporis, fugit culpa.</P>
+                <router-link class="btn btn-orange gabung_sekarang text-white" to="/register">SELENGKAPNYA</router-link>
+              </div>
+            <!-- </div>
+            <div class="row mt-3"> -->
+              <div class="col-md-12 mt-3">
+                <h3 class="btn-orange">KEUNGGULAN KAMI</h3>
+                <ul>
+                  <li>1. Lorem ipsum dolor sit.</li>
+                  <li>2. Lorem ipsum dolor sit.</li>
+                  <li>3. Lorem ipsum dolor sit.</li>
+                  <li>4. Lorem ipsum dolor sit.</li>
+                  <li>5. Lorem ipsum dolor sit.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <!-- <img src="https://picsum.photos/300/289/?image=31" class="card-img-top" alt="..."> -->
+          </div>
+
+        </div>
+
+      </div>
+    </section>
     
     <Footer />
   </div>

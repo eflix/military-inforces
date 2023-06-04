@@ -70,3 +70,8 @@ section {
     background-color: #F4F4F4;
     height: 300;
 }
+
+.copyright {
+    background-color: #000000;
+    height: 50px;
+}
