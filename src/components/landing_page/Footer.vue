@@ -22,7 +22,7 @@
                 <h5>INFORMASI KONTAK</h5>
                 <p class="mt-4 mb-0"><b-icon-building> </b-icon-building> Military In Forces Learning Centre</p><br>
                 <p class="mb-0"><b-icon-telephone> </b-icon-telephone> 09875744848</p><br>
-                <p class="mb-0"><b-icon-geo-envelope> </b-icon-geo-envelope> help@militaryinforces.com</p><br>
+                <p class="mb-0"><b-icon-envelope> </b-icon-envelope> help@militaryinforces.com</p><br>
                 <p class="mb-0"><b-icon-geo-alt> </b-icon-geo-alt> Jl. Anggrek No. 12 Jebres, Surakarta, Jawa Tengah</p><br>
             </div>
         </div>

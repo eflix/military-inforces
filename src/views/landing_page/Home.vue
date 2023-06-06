@@ -124,14 +124,27 @@
           </div>
 
           <div class="col-md-6">
-            <!-- <img src="https://picsum.photos/300/289/?image=31" class="card-img-top" alt="..."> -->
+            <img src="https://picsum.photos/250/400/?image=41" class="" alt="...">
           </div>
 
         </div>
 
       </div>
     </section>
-    
+
+    <section class="tunggu-apa-lagi d-flex align-items-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-7"></div>
+          <div class="col md-5">
+            <h2 class="btn-orange">TUNGGU APA LAGI</h2><hr>
+            <p class="text-white">Segera bergabung bersama <span class="btn-orange">Military in Forces Learning Centre</span> & gapai impian-mu berkarir di POLRI maupun TNI atau Sekolah Kedinasan lainnya.</p><hr>
+            <router-link class="btn btn-orange gabung_sekarang text-white" to="/register">GABUNG SEKARANG</router-link>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <Footer />
   </div>
 </template>
