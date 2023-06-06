@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Home from '../views/landing_page/Home.vue'
 import SekolahKedinasan from '../views/landing_page/SekolahKedinasan.vue'
 import FotoKegiatan from '../views/landing_page/FotoKegiatan.vue'
+import DaftarTentor from '../views/landing_page/DaftarTentor.vue'
 
 Vue.use(VueRouter)
 
@@ -21,6 +22,11 @@ const routes = [
     path: '/foto_kegiatan',
     name: 'foto_kegiatan',
     component: FotoKegiatan
+  },
+  {
+    path: '/daftar_tentor',
+    name: 'daftar_tentor',
+    component: DaftarTentor
   },
   {
     path: '/about',

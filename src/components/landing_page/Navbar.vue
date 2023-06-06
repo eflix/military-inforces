@@ -20,10 +20,10 @@
                         <router-link class="nav-link" to="/gabung_sekarang">PROSES KEGIATAN</router-link>
                     </li>
                     <li class="nav-item">
-                        <router-link class="nav-link" to="/tentang_kami">DAFTAR TENTOR</router-link>
+                        <router-link class="nav-link" to="/daftar_tentor">DAFTAR TENTOR</router-link>
                     </li>
                     <li class="nav-item">
-                        <router-link class="nav-link" to="/gabung_sekarang">SUSUNAN ORGANISASI</router-link>
+                        <router-link class="nav-link" to="/susunan_organisasi">SUSUNAN ORGANISASI</router-link>
                     </li>
                 </b-nav-item-dropdown>
                 <li class="nav-item mr-2">

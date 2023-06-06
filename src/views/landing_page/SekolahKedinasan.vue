@@ -8,11 +8,11 @@
             <div class="col-md-12 text-right mt-4">
                 <router-link class="card-text btn-orange" to="/">Beranda</router-link> / Sekolah Kedinasan
             </div>
-            <div class="col-md-12 m-4">
+            <div class="col-md-12 mt-4">
                 <h1>SEKOLAH KEDINASAN</h1>
             </div>
         </div>
-        <div class="row m-4">
+        <div class="row mt-4">
             <div class="col-md-4">
                 <table>
                     <thead><tr><td>Pilih Kategori Sekolah Kedinasan</td></tr></thead>
