@@ -14,7 +14,7 @@
                 </ul>
                 <b-nav-item-dropdown text="PROFIL" right class="mr-2">
                         <li class="nav-item">
-                        <router-link class="nav-link" to="/tentang_kami">FOTO KEGIATAN</router-link>
+                        <router-link class="nav-link" to="/foto_kegiatan">FOTO KEGIATAN</router-link>
                     </li>
                     <li class="nav-item">
                         <router-link class="nav-link" to="/gabung_sekarang">PROSES KEGIATAN</router-link>
