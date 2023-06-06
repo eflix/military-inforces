@@ -17,6 +17,10 @@ section {
     background-color: #EF800F;
 }
 
+.bg-white {
+    background-color: #FFFFFF;
+}
+
 /* NAV BAR */
 .navbar-nav .nav-link {
     color: #FFFFFF;

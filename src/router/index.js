@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/landing_page/Home.vue'
+import SekolahKedinasan from '../views/landing_page/SekolahKedinasan.vue'
 
 Vue.use(VueRouter)
 
@@ -9,6 +10,11 @@ const routes = [
     path: '/',
     name: 'home',
     component: Home
+  },
+  {
+    path: '/sekolah_kedinasan',
+    name: 'sekolah_kedinasan',
+    component: SekolahKedinasan
   },
   {
     path: '/about',
