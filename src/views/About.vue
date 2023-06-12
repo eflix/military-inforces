@@ -3,9 +3,16 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
-import Component from 'vue-class-component';
+// import Vue from 'vue';
+// import Component from 'vue-class-component';
 
-Component({})
-export default class About extends Vue {}
+// Component({})
+export default {
+  name: 'About',
+  // components: {
+  //   HeaderItems,
+  //   SidebarHeader,
+  //   SidebarItems
+  // }
+}
 </script>

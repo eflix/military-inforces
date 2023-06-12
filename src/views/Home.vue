@@ -1,6 +1,8 @@
 <template>
   <div>
-    <HeaderItems />
+    <!-- <HeaderItems />
+    <SidebarHeader />
+    <SidebarItems /> -->
     <h1 class="title">Home page</h1>
 
   </div>
@@ -11,16 +13,16 @@
 // import Component from 'vue-class-component';
 
 
-import HeaderItems from '../components/HeaderItems.vue';
+// import HeaderItems from '../components/HeaderItems.vue';
 // import SidebarHeader from '../components/SidebarHeader.vue';
 // import SidebarItems from '../components/SidebarItems.vue';
 
 export default {
   name: 'Home',
-  components: {
-    HeaderItems,
-    // SidebarHeader,
-    // SidebarItems
-  }
+  // components: {
+  //   HeaderItems,
+  //   SidebarHeader,
+  //   SidebarItems
+  // }
 }
 </script>

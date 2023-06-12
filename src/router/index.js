@@ -4,6 +4,7 @@ import VueRouter from 'vue-router'
 // import SekolahKedinasan from '../views/landing_page/SekolahKedinasan.vue'
 // import FotoKegiatan from '../views/landing_page/FotoKegiatan.vue'
 // import DaftarTentor from '../views/landing_page/DaftarTentor.vue'
+// import { Siswa } from "../App.vue";
 
 Vue.use(VueRouter)
 
@@ -28,6 +29,11 @@ const routes = [
     path: '/statistics',
     name: 'Statistics',
     component: () => import('../views/Statistics.vue'),
+  },
+  {
+    path: '/siswa/',
+    name: 'Siswa',
+    component: () => import('../views/siswa/Siswa.vue'),
   },
 
   // {

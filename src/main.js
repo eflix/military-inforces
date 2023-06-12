@@ -9,8 +9,8 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 import './assets/css/main.css'
 
 // vue dashboard
-import VueDashboard from 'vue-dashboard-vd';
-Vue.use(VueDashboard);
+// import VueDashboard from 'vue-dashboard-vd';
+// Vue.use(VueDashboard);
 
 import HeaderItems from './components/HeaderItems.vue';
 import SidebarHeader from './components/SidebarHeader.vue';
