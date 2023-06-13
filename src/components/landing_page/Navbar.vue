@@ -31,7 +31,7 @@
                 </li>
                 <li class="nav-item mr-2 shadow ">
                     <!-- <router-link class="nav-link gabung_sekarang" to="/register">GABUNG SEKARANG</router-link> -->
-                    <a class="btn btn-orange gabung_sekarang text-white" href="/member">GABUNG SEKARANG</a>
+                    <a class="btn btn-orange gabung_sekarang text-white" href="/logintest">GABUNG SEKARANG</a>
                 </li>
             </div>
 

@@ -1,18 +1,15 @@
 <template>
   <div id="app">
-    <Header />
-    <Navbar />
     <router-view/>
-    <Footer />
   </div>
 </template>
 
 
 <script>
 
-import { Header } from "./components/landing_page/Header.vue";
-import { Navbar } from "./components/landing_page/Navbar.vue";
-import { Footer } from "./components/landing_page/Footer.vue";
+// import { Header } from "./components/landing_page/Header.vue";
+// import { Navbar } from "./components/landing_page/Navbar.vue";
+// import { Footer } from "./components/landing_page/Footer.vue";
 
 // Component({
 //   components: {
@@ -23,11 +20,11 @@ import { Footer } from "./components/landing_page/Footer.vue";
 // })
 export default  {
   name : 'App',
-  components: {
-    Header,
-    Navbar,
-    Footer,
-  }
+  // components: {
+  //   Header,
+  //   Navbar,
+  //   Footer,
+  // }
 }
 </script>
 

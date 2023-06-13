@@ -4,11 +4,17 @@ import Home from '../views/landing_page/Home.vue'
 import SekolahKedinasan from '../views/landing_page/SekolahKedinasan.vue'
 import FotoKegiatan from '../views/landing_page/FotoKegiatan.vue'
 import DaftarTentor from '../views/landing_page/DaftarTentor.vue'
-// import { Siswa } from "../App.vue";
 
 Vue.use(VueRouter)
 
 const routes = [
+  // AUTH
+  {
+    path: '/logintest',
+    name: 'Login',
+    component: () => import('../views/Logintest.vue'),
+  },
+
   {
     path: '/member/about',
     name: 'About',
@@ -50,15 +56,7 @@ const routes = [
     path: '/daftar_tentor',
     name: 'daftar_tentor',
     component: DaftarTentor
-  },
-  // {
-  //   path: '/about',
-  //   name: 'about',
-  //   // route level code-splitting
-  //   // this generates a separate chunk (about.[hash].js) for this route
-  //   // which is lazy-loaded when the route is visited.
-  //   component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
-  // }
+  }
 ]
 
 const router = new VueRouter({

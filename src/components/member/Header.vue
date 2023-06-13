@@ -10,7 +10,8 @@
                     </li>
                     <li class="nav-item">
                         <!-- <router-link :to="{path : '/'}"><button>Sign Out</button></router-link> -->
-                        <a href="/">Sign Out</a>
+                        <button class="btn btn-danger" @click="redirectReload">Sign Out</button>
+                        <!-- <a href="/">Sign Out</a> -->
                     </li>
                 </b-nav-item-dropdown>
 
@@ -18,6 +19,23 @@
     </b-navbar>
   </div>
 </template>
+
+<script>
+export default {
+  methods: {
+    logout: function () {
+      this.$session.destroy()
+      this.$router.push({path:'/',reload: true})
+    },
+    redirectReload() {
+      this.$router
+          .push({ path: '/' })
+          .then(() => { this.$router.go() })
+      this.$session.destroy()
+      }
+  }
+}
+</script>
 
 <style>
 .header {

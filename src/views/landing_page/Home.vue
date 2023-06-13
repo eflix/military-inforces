@@ -12,7 +12,7 @@
               <h1>MILITARY IN FORCES LEARNING CENTRE</h1><hr>
               <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi necessitatibus assumenda ea aliquid nihil, eaque atque magnam, minus reprehenderit inventore, sapiente neque eos mollitia dolores in saepe. Doloribus, quod aperiam.</p><hr>
               <!-- <router-link class="btn btn-orange gabung_sekarang text-white" to="/member">GABUNG SEKARANG</router-link> -->
-              <a class="btn btn-orange gabung_sekarang text-white" href="/member">GABUNG SEKARANG</a>
+              <a class="btn btn-orange gabung_sekarang text-white" href="/logintest">GABUNG SEKARANG</a>
             </div>
           </div>
         </div>
