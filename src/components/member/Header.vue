@@ -1,5 +1,5 @@
 <template>
-  <div class="" style="background-color:grey;">
+  <div class="header">
     <b-navbar type="none" variant="none">
         <!-- <img src="../../assets/images/logo.png" alt="logo" width="10%" class="position-absolute" style="margin-top:70px;"> -->
         <b-navbar-nav class="ml-auto">
@@ -9,7 +9,8 @@
                         <router-link class="nav-link" to="/foto_kegiatan">Profile</router-link>
                     </li>
                     <li class="nav-item">
-                        <router-link class="nav-link" to="/gabung_sekarang">Sign Out</router-link>
+                        <!-- <router-link :to="{path : '/'}"><button>Sign Out</button></router-link> -->
+                        <a href="/">Sign Out</a>
                     </li>
                 </b-nav-item-dropdown>
 
@@ -19,7 +20,9 @@
 </template>
 
 <style>
-
+.header {
+  background-color: #EF800F;
+}
 /* .navbar-nav .nav-link {
   color: #000000 !important;
 }

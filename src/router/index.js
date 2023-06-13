@@ -9,33 +9,28 @@ import DaftarTentor from '../views/landing_page/DaftarTentor.vue'
 Vue.use(VueRouter)
 
 const routes = [
-
-  // {
-  //   path: '/',
-  //   name: 'Home',
-  //   component: () => import('../views/Home.vue'),
-  // },
-  // {
-  //   path: '/about',
-  //   name: 'About',
-  //   component: () => import('../views/About.vue'),
-  // },
-  // {
-  //   path: '/account',
-  //   name: 'Account',
-  //   component: () => import('../views/Account.vue'),
-  // },
-  // {
-  //   path: '/statistics',
-  //   name: 'Statistics',
-  //   component: () => import('../views/Statistics.vue'),
-  // },
+  {
+    path: '/member/about',
+    name: 'About',
+    component: () => import('../views/About.vue'),
+  },
+  {
+    path: '/member/account',
+    name: 'Account',
+    component: () => import('../views/Account.vue'),
+  },
+  {
+    path: '/member/statistics',
+    name: 'Statistics',
+    component: () => import('../views/Statistics.vue'),
+  },
   {
     path: '/member/',
     name: 'Siswa',
     component: () => import('../Member/views/Dashboard.vue'),
   },
 
+  // LANDING PAGE
   {
     path: '/',
     name: 'home',

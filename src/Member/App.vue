@@ -40,8 +40,8 @@ export default  {
 </script>
 
 <style>
-.content {
-  margin-left: 17%;
+.container {
+  margin-left: 0px;
   /* background-color: #FFFFFF; */
 }
 /* #app {

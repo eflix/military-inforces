@@ -30,7 +30,8 @@
                     <router-link class="nav-link" to="/tentang_kami">TENTANG KAMI</router-link>
                 </li>
                 <li class="nav-item mr-2 shadow ">
-                    <router-link class="nav-link gabung_sekarang" to="/register">GABUNG SEKARANG</router-link>
+                    <!-- <router-link class="nav-link gabung_sekarang" to="/register">GABUNG SEKARANG</router-link> -->
+                    <a class="btn btn-orange gabung_sekarang text-white" href="/member">GABUNG SEKARANG</a>
                 </li>
             </div>
 
