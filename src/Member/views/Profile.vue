@@ -9,30 +9,40 @@
         >
         <b-card-body>
             <b-row>
-                <b-col sm="3">Nama</b-col>
-                <b-col sm="9">: {{username }}</b-col>
+                <b-col sm="3" class="mb-3">Nama</b-col><b-col sm="9">: {{products.data[0].nama}}</b-col>
+                <b-col sm="3" class="mb-3">No Hp</b-col><b-col sm="9">: {{products.data[0].no_hp}}</b-col>
+                <b-col sm="3" class="mb-3">Email</b-col><b-col sm="9">: {{products.data[0].email}}</b-col>
+                <b-col sm="3">Asal Sekolah</b-col><b-col sm="9">: {{products.data[0].asal_sekolah}}</b-col>
             </b-row>
 
+        </b-card-body>
+    </b-card>
+
+    <b-card
+            header-text-variant="h1"
+            border-variant="warning"
+            header="Paket"
+            header-bg-variant="transparent"
+            align="left"
+            class="mt-4"
+        >
+        <b-card-body>
+
             <b-card-text>
-                
+                Coming Soon
             </b-card-text>
 
         </b-card-body>
     </b-card>
-    {{products}}
+    <!-- {{products.data[0]}} -->
 
-    <!-- <div class="row mb-3">
-      <div class="col-md-4 mt-4" v-for="product in products" :key="product.id">
-        <CardProduct :product="product"/>
-      </div>
-    </div> -->
 </div>
 </template>
 
 <script>
 import axios from 'axios';
-axios.defaults.headers.common['Content-Type'] = 'application/x-www-form-urlencoded'
-axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
+// axios.defaults.headers.common['Content-Type'] = 'application/x-www-form-urlencoded'
+// axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
 
 export default {
 data(){
@@ -47,9 +57,12 @@ data(){
     }
   },
   mounted(){
-    axios.get('http://localhost/api2/military_inforces/member/profile/profile/', this.data, {
+    axios.get('http://localhost/api/military_inforces/member/profile/profile', {
       headers: {
-          // "Access-Control-Allow-Origin": 'http://localhost:8080/member/profile',
+        "Content-type": "application/json",
+        //  "Clear-Site-Data": "*",
+        //  'Content-Type': 'application/x-www-form-urlencoded'
+          // "Access-Control-Allow-Origin": "*",
           // "Access-Control-Allow-Methods": "GET, POST, PATCH, PUT, DELETE, OPTIONS",
           // "Access-Control-Allow-Headers": "Origin, Content-Type, X-Auth-Token, Accept",
           //     'content-type': 'application/json',
