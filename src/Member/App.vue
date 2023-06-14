@@ -13,41 +13,45 @@
 
 
 <script>
-// import { Component, Vue } from 'vue-property-decorator';
-// import Vue from 'vue';
-// import HeaderItems from './../components/HeaderItems.vue';
-// // import SidebarHeader from './components/SidebarHeader.vue';
-// import SidebarItems from './../components/SidebarItems.vue';
 
 import Header from './../components/member/Header.vue';
 import Sidebar from './../components/member/Sidebar.vue';
 
-// Component({
-//   components: {
-//     HeaderItems,
-//     SidebarHeader,
-//     SidebarItems,
-//   },
-// })
 export default  {
   name : 'App',
   components: {
     Header,
     Sidebar,
-    // SidebarItems,
-  }
+  },
+  data(){
+    return{
+      username: this.$session.get("username")?this.$session.get("username"):""
+    }
+  },
+  methods:{
+    cekLogin : function (){
+      if (this.$session.get("username")){
+        // console.log(this.$session.get("username"))
+      } else {
+      this.logout()
+      }
+    },
+    logout: function () {
+      this.$session.destroy()
+      this.$router
+                .push({ path: '/' })
+                .then(() => { this.$router.go() })
+    }
+  },
+  beforeMount() {
+   this.cekLogin()
+},
+  
 }
 </script>
 
 <style>
 .container {
   margin-left: 0px;
-  /* background-color: #FFFFFF; */
 }
-/* #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-}
-.title {
-  margin-top: 15px;
-} */
 </style>

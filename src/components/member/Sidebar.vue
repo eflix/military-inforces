@@ -103,6 +103,15 @@
             </router-link>
           </li>
 
+          <li id="links_100">
+            <a href="#" class="" @click="redirectReload">
+              <i class="bx bx-log-out"></i>
+              <span class="links_name">Sign Out</span>
+              <span data-target="links_100"
+              class="tooltip">Sign Out</span>
+            </a>
+          </li>
+
           <!-- <li
             v-for="(menuItem, index) in menuItems"
             :key="index"
@@ -139,7 +148,7 @@
         </ul>
       </div>
 
-      <div
+      <!-- <div
         v-if="isLoggedIn"
         class="profile"
       >
@@ -168,7 +177,7 @@
           id="log_out"
           @click.stop="$emit('button-exit-clicked')"
         />
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
@@ -379,6 +388,12 @@
       },
     },
     methods: {
+      redirectReload() {
+      this.$router
+          .push({ path: '/' })
+          .then(() => { this.$router.go() })
+      this.$session.destroy()
+      },
       tooltipAttached() {
         const tooltips = document.querySelectorAll('.tooltip')
         tooltips.forEach(tooltip => {

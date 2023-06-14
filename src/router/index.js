@@ -15,10 +15,12 @@ const routes = [
     component: () => import('../views/Logintest.vue'),
   },
 
+
+  // MEMBER
   {
-    path: '/member/about',
+    path: '/member/profile',
     name: 'About',
-    component: () => import('../views/About.vue'),
+    component: () => import('../Member/views/Profile.vue'),
   },
   {
     path: '/member/account',

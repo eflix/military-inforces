@@ -14,7 +14,10 @@ module.exports = defineConfig({
       title: 'Member',
       chunks: [ 'chunk-vendors', 'chunk-common', 'member' ]
     }
-  }
+  },
+  devServer: {
+    proxy: 'http://localhost:8080/',
+    }
 })
 
 // module.exports = {
