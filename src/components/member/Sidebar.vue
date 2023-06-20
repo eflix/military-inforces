@@ -79,9 +79,9 @@
           <li id="links_1">
             <router-link to="/member/jadwal" >
               <i class="bx bx-calendar"></i>
-              <span class="links_name">Jadwal Ujian</span>
+              <span class="links_name">Jadwal Pelaksanaan</span>
               <span data-target="links_1"
-              class="tooltip">Jadwal Ujian</span>
+              class="tooltip">Jadwal Pelaksanaan</span>
             </router-link>
           </li>
 
@@ -97,9 +97,9 @@
           <li id="links_3">
             <router-link to="/member/soal" >
               <i class="bx bx-book-open"></i>
-              <span class="links_name">Soal</span>
+              <span class="links_name">Soal / Ujian</span>
               <span data-target="links_3"
-              class="tooltip">Soal</span>
+              class="tooltip">Soal / Ujian</span>
             </router-link>
           </li>
 

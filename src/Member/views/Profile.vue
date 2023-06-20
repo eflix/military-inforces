@@ -57,7 +57,7 @@ data(){
     }
   },
   mounted(){
-    axios.get('http://localhost/api/military_inforces/member/profile/profile', {
+    axios.get('http://localhost/api2/military_inforces/member/profile/profile', {
       headers: {
         "Content-type": "application/json",
         //  "Clear-Site-Data": "*",

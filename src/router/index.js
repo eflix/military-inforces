@@ -19,18 +19,18 @@ const routes = [
   // MEMBER
   {
     path: '/member/profile',
-    name: 'About',
+    name: 'Profile',
     component: () => import('../Member/views/Profile.vue'),
   },
   {
-    path: '/member/account',
-    name: 'Account',
-    component: () => import('../views/Account.vue'),
+    path: '/member/tentor',
+    name: 'Tentor',
+    component: () => import('../Member/views/Tentor.vue'),
   },
   {
-    path: '/member/statistics',
-    name: 'Statistics',
-    component: () => import('../views/Statistics.vue'),
+    path: '/member/jadwal_pelaksanaan',
+    name: 'Jadwal Pelaksanaan',
+    component: () => import('../views/JadwalPelaksanaan.vue'),
   },
   {
     path: '/member/',
