@@ -77,7 +77,7 @@
           </li>
 
           <li id="links_1">
-            <router-link to="/member/jadwal" >
+            <router-link to="/member/jadwal_pelaksanaan" >
               <i class="bx bx-calendar"></i>
               <span class="links_name">Jadwal Pelaksanaan</span>
               <span data-target="links_1"

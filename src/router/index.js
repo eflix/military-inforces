@@ -30,7 +30,7 @@ const routes = [
   {
     path: '/member/jadwal_pelaksanaan',
     name: 'Jadwal Pelaksanaan',
-    component: () => import('../views/JadwalPelaksanaan.vue'),
+    component: () => import('../Member/views/JadwalPelaksanaan.vue'),
   },
   {
     path: '/member/',
