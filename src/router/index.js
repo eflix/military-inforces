@@ -33,9 +33,9 @@ const routes = [
     component: () => import('../Member/views/JadwalPelaksanaan.vue'),
   },
   {
-    path: '/member/',
-    name: 'Siswa',
-    component: () => import('../Member/views/Dashboard.vue'),
+    path: '/member/soal_ujian',
+    name: 'Soal Ujian',
+    component: () => import('../Member/views/SoalUjian.vue'),
   },
 
   // LANDING PAGE

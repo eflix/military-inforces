@@ -95,7 +95,7 @@
           </li>
 
           <li id="links_3">
-            <router-link to="/member/soal" >
+            <router-link to="/member/soal_ujian" >
               <i class="bx bx-book-open"></i>
               <span class="links_name">Soal / Ujian</span>
               <span data-target="links_3"
