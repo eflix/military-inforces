@@ -37,6 +37,11 @@ const routes = [
     name: 'Soal Ujian',
     component: () => import('../Member/views/SoalUjian.vue'),
   },
+  {
+    path: '/member/ujian',
+    name: 'Ujian',
+    component: () => import('../Member/views/Ujian.vue'),
+  },
 
   // LANDING PAGE
   {

@@ -1,6 +1,16 @@
 <template>
   <div class="container mt-3">
-    <h3>Soal Ujian</h3>
+    <h3>Soal Ujian</h3> 
+
+    <b-row>
+        <b-col sm="3" class="mb-3">Paket</b-col><b-col sm="9">: </b-col>
+        <b-col sm="3" class="mb-3">jumlah</b-col><b-col sm="9">: </b-col>
+        <b-col sm="3" class="mb-3">Waktu</b-col><b-col sm="9">: </b-col>
+    </b-row>
+    {{jadwal.data}}
+
+    <button v-if="jadwal" class="btn btn-success" to="/member/ujian"> Lanjutkan Ujian </button>
+    <button v-else class="btn btn-success" v-on:click.prevent = "getPertanyaan()"> Mulai Ujian </button>
     <!-- <b-table
       id="table-transition-example"
       :items="Jadwal.data"
@@ -9,44 +19,49 @@
       small
       primary-key="tanggal"
       :tbody-transition-props="transProps"
-    ></b-table> -->
-
+    ></b-table> -->  
 </div>
 </template>
 
 <script>
-// import axios from 'axios';
+import axios from 'axios';
 
 export default {
-// data(){
-//     return{
-//       username: this.$session.get("username")?this.$session.get("username"):"",
-//       Jadwal:[],
-//       transProps: {
-//           // Transition name
-//           name: 'flip-list'
-//         },
-//         fields: [
-//         {key : "hari", sortable: true},
-//         {key : "tanggal", sortable: true},
-//         {key : "keterangan", sortable: true}
-//         ]
-//     }
-//   },
-//   methods:{
-//      setJadwal(data){
-//       this.Jadwal = data
-//     }
-//   },
-//   mounted(){
-//     axios.get('http://localhost/api2/military_inforces/member/member/jadwal_pelaksanaan', {
-//       headers: {
-//         "Content-type": "application/json",
-//         }
-//     })
-//   .then( (response) =>this.setJadwal(response.data))
-//   .catch((error) => console.log(error));
-//   }
+data(){
+    return{
+      username: this.$session.get("username")?this.$session.get("username"):"",
+      jadwal:[],
+    }
+  },
+  methods:{
+     getPertanyaan(){
+        axios.get('http://localhost/api2/military_inforces/member/member/set_pertanyaan', {
+          headers: {
+            "Content-type": "application/json",
+            }
+        })
+      .then( 
+        (response) => console.log(response.data.message),
+      this.$router
+                .push({ path: '/member/ujian' })
+                .then(() => { this.$router.go() })
+      )
+      .catch((error) => console.log(error));
+      // console.log("cek button")
+     },
+     setJadwal(data){
+      this.jadwal = data
+    }
+  },
+  mounted(){
+    axios.get('http://localhost/api2/military_inforces/member/member/cek_temp_ujian', {
+      headers: {
+        "Content-type": "application/json",
+        }
+    })
+  .then( (response) =>this.setJadwal(response.data))
+  .catch((error) => console.log(error));
+  }
 }
 </script>
 
