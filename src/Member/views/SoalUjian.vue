@@ -7,9 +7,9 @@
         <b-col sm="3" class="mb-3">jumlah</b-col><b-col sm="9">: </b-col>
         <b-col sm="3" class="mb-3">Waktu</b-col><b-col sm="9">: </b-col>
     </b-row>
-    {{jadwal.data}}
+    <!-- {{jadwal.data}} -->
 
-    <button v-if="jadwal" class="btn btn-success" to="/member/ujian"> Lanjutkan Ujian </button>
+    <button v-if="jadwal.data" class="btn btn-success" v-on:click.prevent = "returnUjian()"> Lanjutkan Ujian </button>
     <button v-else class="btn btn-success" v-on:click.prevent = "getPertanyaan()"> Mulai Ujian </button>
     <!-- <b-table
       id="table-transition-example"
@@ -35,7 +35,7 @@ data(){
   },
   methods:{
      getPertanyaan(){
-        axios.get('http://localhost/api2/military_inforces/member/member/set_pertanyaan', {
+        axios.get('http://localhost/api2/military_inforces/member/member/set_ujian', {
           headers: {
             "Content-type": "application/json",
             }
@@ -47,14 +47,18 @@ data(){
                 .then(() => { this.$router.go() })
       )
       .catch((error) => console.log(error));
-      // console.log("cek button")
+     },
+     returnUjian(){
+      this.$router
+                .push({ path: '/member/ujian' })
+                .then(() => { this.$router.go() })
      },
      setJadwal(data){
       this.jadwal = data
     }
   },
   mounted(){
-    axios.get('http://localhost/api2/military_inforces/member/member/cek_temp_ujian', {
+    axios.get('http://localhost/api2/military_inforces/member/member/cek_ujian', {
       headers: {
         "Content-type": "application/json",
         }
