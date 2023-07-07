@@ -8,20 +8,36 @@
     <b-row>
         <b-col sm="10" class="mb-9">
           <strong> No. {{parseInt(Pertanyaan.data[0]['no_urut'])}}</strong>
-          <div>
+          <div class="pertanyaan">
             <h5>{{Pertanyaan.data[0]['text_pertanyaan']}}</h5>
+
+            <input type="radio" id="a" value="a" v-model="answer" />
+            <label for="a"> <span>A. {{Pertanyaan.data[0]['a']}}</span></label> <br />
+
+            <input type="radio" id="b" value="b" v-model="answer" />
+            <label for="b"><span>B. {{Pertanyaan.data[0]['b']}}</span></label> <br />
+
+            <input type="radio" id="c" value="c" v-model="answer" />
+            <label for="c"><span>C. {{Pertanyaan.data[0]['c']}}</span></label> <br />
+
+            <input type="radio" id="d" value="d" v-model="answer" />
+            <label for="d"><span>D. {{Pertanyaan.data[0]['d']}}</span></label> <br />
+
+            <input type="radio" id="e" value="e" v-model="answer" />
+            <label for="e"><span>E. {{Pertanyaan.data[0]['e']}}</span></label> <br />
+
           </div>
-          <v-radio-group>
-  <v-radio label="Radio 1" value="1"></v-radio>
-  <v-radio label="Radio 2" value="2"></v-radio>
-  <v-radio label="Radio 3" value="3"></v-radio>
-</v-radio-group>
+          <div class="tombol">
+            <button class="btn btn-warning" v-if="parseInt(Pertanyaan.data[0]['no_urut'])>1" v-on:click.prevent="getPertanyaanByNo(parseInt(Pertanyaan.data[0]['no_urut'])-1)">Sebelumnya</button>
+            <button class="btn btn-success" v-if="parseInt(Pertanyaan.data[0]['no_urut'])<parseInt(TempUjian.data[0]['total_number'])" v-on:click.prevent="getPertanyaanByNo(parseInt(Pertanyaan.data[0]['no_urut'])+1)">Selanjutnya</button>
+            <button class="btn btn-success" v-if="answer && parseInt(Pertanyaan.data[0]['no_urut'])<parseInt(TempUjian.data[0]['total_number'])" v-on:click.prevent="saveNext(parseInt(TempUjian.data[0]['id']),parseInt(Pertanyaan.data[0]['id']),answer)">Simpan & Selanjutnya</button>
+            <button class="btn btn-success" v-if="answer && parseInt(Pertanyaan.data[0]['no_urut'])>=parseInt(TempUjian.data[0]['total_number'])">Simpan & Selesai</button>
+          </div>
+          <!-- {{answer}} -->
         </b-col>
-        <b-col sm="">
+        <b-col sm="2" class="no-soal">
           <button v-for="index in parseInt(TempUjian.data[0]['total_number'])" :key="index" class="btn btn-danger" v-on:click.prevent="getPertanyaanByNo(`${index}`)"> {{index}}</button>
         </b-col>
-        <!-- <b-col sm="3" class="mb-3">jumlah</b-col><b-col sm="9">: </b-col>
-        <b-col sm="3" class="mb-3">Waktu</b-col><b-col sm="9">: </b-col> -->
     </b-row>
   </div>
 </template>
@@ -33,7 +49,7 @@ export default {
   name: 'Ujian',
   data() {
     return {
-      countDownToTime : new Date("July 06, 2023 17:50:00").getTime(),
+      countDownToTime : new Date("July 06, 2023 23:50:00").getTime(),
       timerOutput:  null
     }
 },
@@ -63,19 +79,22 @@ methods: {
     },
     getPertanyaanByNo(no){
       console.log(no);
-      axios.get('http://localhost/api2/military_inforces/member/member/pertanyaanByNo', {
-          headers: {
-            "Content-type": "application/json",
-            },
-            params:{
+      axios.post('http://localhost/api2/military_inforces/member/member/pertanyaanByNo', {
               no : no
-            }
+            }, {
+          headers: {
+            "Content-type": "text/plain",
+            },
         })
       .then( 
-        (response) => console.log(response.data.message),
-      window.location.reload(),
+        (response) => this.setPertanyaan(response.data),
+      // window.location.reload(),
       )
       .catch((error) => console.log(error));
+    },
+    saveNext(id_ujian,no,answer){
+      console.log(no);
+      console.log(answer);
     }
   },
   mounted() {
@@ -87,10 +106,7 @@ methods: {
     })
   .then((response) => {
     this.setTempUjian(response.data)
-    // console.log(response.data.data[0]['last_number'])
     var last_number = response.data.data[0]['last_number']
-    // const no_urut = JSON.stringify({ no: 3});
-    // let tokenStr = 'xxyyzz';
     axios.post('http://localhost/api2/military_inforces/member/member/pertanyaanByNo', {no : last_number},{
           headers: {
             "Content-type": "text/plain",
@@ -112,3 +128,12 @@ methods: {
 
 }
 </script>
+
+<style>
+.tombol .btn {
+  margin-left: 10px;
+}
+.no-soal .btn {
+  width: 40px;
+}
+</style>
