@@ -28,15 +28,18 @@
 
           </div>
           <div class="tombol">
-            <button class="btn btn-warning" v-if="parseInt(Pertanyaan.data[0]['no_urut'])>1" v-on:click.prevent="getPertanyaanByNo(parseInt(Pertanyaan.data[0]['no_urut'])-1)">Sebelumnya</button>
-            <button class="btn btn-success" v-if="parseInt(Pertanyaan.data[0]['no_urut'])<parseInt(TempUjian.data[0]['total_number'])" v-on:click.prevent="getPertanyaanByNo(parseInt(Pertanyaan.data[0]['no_urut'])+1)">Selanjutnya</button>
-            <button class="btn btn-success" v-if="answer && parseInt(Pertanyaan.data[0]['no_urut'])<parseInt(TempUjian.data[0]['total_number'])" v-on:click.prevent="saveNext(parseInt(TempUjian.data[0]['id']),parseInt(Pertanyaan.data[0]['id']),answer)">Simpan & Selanjutnya</button>
+            <button class="btn btn-warning" v-if="parseInt(Pertanyaan.data[0]['no_urut'])>1" v-on:click.prevent="getPertanyaanByNo(parseInt(Pertanyaan.data[0]['no_urut'])-1,parseInt(TempUjian.data[0]['id']))">Sebelumnya</button>
+            <button class="btn btn-success" v-if="parseInt(Pertanyaan.data[0]['no_urut'])<parseInt(TempUjian.data[0]['total_number'])" v-on:click.prevent="getPertanyaanByNo(parseInt(Pertanyaan.data[0]['no_urut'])+1,parseInt(TempUjian.data[0]['id']))">Selanjutnya</button>
+            <button class="btn btn-success" v-if="answer && parseInt(Pertanyaan.data[0]['no_urut'])<parseInt(TempUjian.data[0]['total_number'])" v-on:click.prevent="saveNext(parseInt(TempUjian.data[0]['id']),parseInt(Pertanyaan.data[0]['id']),answer,parseInt(Pertanyaan.data[0]['no_urut']))">Simpan & Selanjutnya</button>
             <button class="btn btn-success" v-if="answer && parseInt(Pertanyaan.data[0]['no_urut'])>=parseInt(TempUjian.data[0]['total_number'])">Simpan & Selesai</button>
           </div>
-          <!-- {{answer}} -->
+          <!-- {{TempUjian.allPertanyaan}} -->
         </b-col>
         <b-col sm="2" class="no-soal">
-          <button v-for="index in parseInt(TempUjian.data[0]['total_number'])" :key="index" class="btn btn-danger" v-on:click.prevent="getPertanyaanByNo(`${index}`)"> {{index}}</button>
+          <span v-for="(row,i) in TempUjian.allPertanyaan" :key="i">
+            <button v-if="row.jawaban" class="btn btn-success" v-on:click.prevent="getPertanyaanByNo(parseInt(row.no_urut),parseInt(TempUjian.data[0]['id']))"> {{row.no_urut}}</button>
+            <button v-else class="btn btn-danger" v-on:click.prevent="getPertanyaanByNo(parseInt(row.no_urut),parseInt(TempUjian.data[0]['id']))"> {{row.no_urut}}</button>
+          </span>
         </b-col>
     </b-row>
   </div>
@@ -50,7 +53,8 @@ export default {
   data() {
     return {
       countDownToTime : new Date("July 06, 2023 23:50:00").getTime(),
-      timerOutput:  null
+      timerOutput:  null,
+      answer : ""
     }
 },
 methods: {
@@ -77,24 +81,45 @@ methods: {
     setPertanyaan(data){
       this.Pertanyaan = data
     },
-    getPertanyaanByNo(no){
-      console.log(no);
+    getPertanyaanByNo(no,id_ujian){
+      
       axios.post('http://localhost/api2/military_inforces/member/member/pertanyaanByNo', {
-              no : no
+              no : no,
+              id_ujian : id_ujian,
             }, {
           headers: {
             "Content-type": "text/plain",
             },
         })
       .then( 
-        (response) => this.setPertanyaan(response.data),
-      // window.location.reload(),
+        (response) => {
+          this.setPertanyaan(response.data)
+          if(response.data.data[0]['jawaban']){
+            this.answer = response.data.data[0]['jawaban']
+          } else {
+            this.answer = null
+          }
+        }
       )
       .catch((error) => console.log(error));
     },
-    saveNext(id_ujian,no,answer){
-      console.log(no);
-      console.log(answer);
+    saveNext(id_ujian,id_pertanyaan,answer,no){
+      axios.post('http://localhost/api2/military_inforces/member/member/save_answer', {
+              id_ujian : id_ujian,
+              id_pertanyaan : id_pertanyaan,
+              answer : answer,
+              last_numb : no+1,
+            }, {
+          headers: {
+            "Content-type": "text/plain",
+            },
+        })
+      .then( 
+        this.getPertanyaanByNo(no+1,id_ujian),
+        window.location.reload()
+        // this.answer = null
+      )
+      .catch((error) => console.log(error));
     }
   },
   mounted() {
@@ -107,7 +132,9 @@ methods: {
   .then((response) => {
     this.setTempUjian(response.data)
     var last_number = response.data.data[0]['last_number']
-    axios.post('http://localhost/api2/military_inforces/member/member/pertanyaanByNo', {no : last_number},{
+    var id_ujian = response.data.data[0]['id']
+    axios.post('http://localhost/api2/military_inforces/member/member/pertanyaanByNo', 
+    {no : last_number,id_ujian : id_ujian},{
           headers: {
             "Content-type": "text/plain",
             },
@@ -117,8 +144,12 @@ methods: {
       .then( 
         (response) => {
           this.setPertanyaan(response.data)
-          console.log(response.data);
+          if(response.data.data[0]['jawaban']){
+            this.answer = response.data.data[0]['jawaban']
+          } else {
+            this.answer = null
           }
+        }
       )
       .catch((error) => console.log(error));
   }
