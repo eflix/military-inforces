@@ -42,6 +42,16 @@ const routes = [
     name: 'Ujian',
     component: () => import('../Member/views/Ujian.vue'),
   },
+  {
+    path: '/member/history',
+    name: 'History',
+    component: () => import('../Member/views/HistoryUjian.vue'),
+  },
+  {
+    path: '/member/detail_history/:UjianId',
+    name: 'History',
+    component: () => import('../Member/views/DetailHistory.vue'),
+  },
 
   // LANDING PAGE
   {

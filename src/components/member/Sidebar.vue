@@ -103,12 +103,21 @@
             </router-link>
           </li>
 
+          <li id="links_4">
+            <router-link to="/member/history" >
+              <i class="bx bx-book-open"></i>
+              <span class="links_name">Riwayat Ujian</span>
+              <span data-target="links_4"
+              class="tooltip">Riwayat Ujian</span>
+            </router-link>
+          </li>
+
           <li id="links_100">
             <a href="#" class="" @click="redirectReload">
               <i class="bx bx-log-out"></i>
-              <span class="links_name">Sign Out</span>
+              <span class="links_name">Keluar</span>
               <span data-target="links_100"
-              class="tooltip">Sign Out</span>
+              class="tooltip">Keluar</span>
             </a>
           </li>
 
