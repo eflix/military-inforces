@@ -5,12 +5,12 @@
         <b-navbar-nav class="ml-auto">
           
             <b-nav-item-dropdown :text="username" right class="mr-2">           
-                    <li class="nav-item">
+                    <li class="nav-item header">
                         <router-link class="nav-link" to="/member/profile">Profile</router-link>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item header">
                         <!-- <router-link :to="{path : '/'}"><button>Sign Out</button></router-link> -->
-                        <button class="btn btn-danger" @click="logout">Sign Out</button>
+                        <button class="btn btn-link"  @click="logout">Sign Out</button>
                         <!-- <a class="btn btn-danger" href="#" @click="logout">Sign Out</a> -->
                     </li>
                 </b-nav-item-dropdown>
@@ -44,4 +44,28 @@ export default {
   background-color: #EF800F;
   padding : 5px;
 }
+.navbar-nav .dropdown-menu {
+  background: #EF800F;
+}
+
+.nav-item .header {
+  background: none;
+  padding: 2px;;
+}
+
+.nav-item .header .btn-link {
+  text-decoration: none;
+  color: #000000;
+}
+
+.nav-item .header :hover {
+  background: #ffffff;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.nav-item .header .nav-link{
+  border-bottom: 1px solid;
+}
+
 </style>

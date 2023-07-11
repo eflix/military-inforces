@@ -12,13 +12,14 @@
                 <b-col sm="3" class="mb-3">Nama</b-col><b-col sm="9">: {{products.data[0].nama}}</b-col>
                 <b-col sm="3" class="mb-3">No Hp</b-col><b-col sm="9">: {{products.data[0].no_hp}}</b-col>
                 <b-col sm="3" class="mb-3">Email</b-col><b-col sm="9">: {{products.data[0].email}}</b-col>
-                <b-col sm="3">Asal Sekolah</b-col><b-col sm="9">: {{products.data[0].asal_sekolah}}</b-col>
+                <b-col sm="3" class="mb-3">Asal Sekolah</b-col><b-col sm="9">: {{products.data[0].asal_sekolah}}</b-col>
+                <b-col sm="3">Paket</b-col><b-col sm="9">: {{products.data[0].nama_paket}}</b-col>
             </b-row>
 
         </b-card-body>
     </b-card>
 
-    <b-card
+    <!-- <b-card
             header-text-variant="h1"
             border-variant="warning"
             header="Paket"
@@ -33,7 +34,7 @@
             </b-card-text>
 
         </b-card-body>
-    </b-card>
+    </b-card> -->
     <!-- {{products.data[0]}} -->
 
 </div>

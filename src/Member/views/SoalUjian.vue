@@ -3,9 +3,9 @@
     <h3>Soal Ujian</h3> 
 
     <b-row>
-        <b-col sm="3" class="mb-3">Paket</b-col><b-col sm="9">: </b-col>
-        <b-col sm="3" class="mb-3">jumlah</b-col><b-col sm="9">: </b-col>
-        <b-col sm="3" class="mb-3">Waktu</b-col><b-col sm="9">: </b-col>
+        <b-col sm="3" class="mb-3">Paket</b-col><b-col sm="9">: Pengantar Ilmu Politik</b-col>
+        <b-col sm="3" class="mb-3">jumlah Soal</b-col><b-col sm="9">: 5</b-col>
+        <b-col sm="3" class="mb-3">Waktu</b-col><b-col sm="9">: 10 Menit</b-col>
     </b-row>
     <!-- {{jadwal.data}} -->
 

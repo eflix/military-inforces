@@ -33,7 +33,6 @@
             <button class="btn btn-success" v-if="answer && parseInt(Pertanyaan.data[0]['no_urut'])<parseInt(TempUjian.data[0]['total_number'])" v-on:click.prevent="saveNext(parseInt(TempUjian.data[0]['id']),parseInt(Pertanyaan.data[0]['id']),answer,parseInt(Pertanyaan.data[0]['no_urut']))">Simpan & Selanjutnya</button>
             <button class="btn btn-success" v-if="answer && parseInt(Pertanyaan.data[0]['no_urut'])>=parseInt(TempUjian.data[0]['total_number'])">Simpan & Selesai</button>
           </div>
-          <!-- {{TempUjian.allPertanyaan}} -->
         </b-col>
         <b-col sm="2" class="no-soal">
           <span v-for="(row,i) in TempUjian.allPertanyaan" :key="i">
@@ -41,13 +40,17 @@
             <button v-else class="btn btn-danger" v-on:click.prevent="getPertanyaanByNo(parseInt(row.no_urut),parseInt(TempUjian.data[0]['id']))"> {{row.no_urut}}</button>
           </span>
         </b-col>
+        {{TempUjian.data[0]['id']}}
+        {{Pertanyaan.data[0]['id']}}
     </b-row>
   </div>
 </template>
 
 <script>
 import axios from 'axios';
-
+var today = new Date();
+var date1 = (today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds()).toString()
+console.log(date1)
 export default {
   name: 'Ujian',
   data() {
@@ -131,6 +134,9 @@ methods: {
     })
   .then((response) => {
     this.setTempUjian(response.data)
+    var date = new Date(response.data.data[0]['tanggal_ujian'] + ' ' + response.data.data[0]['finish_time'])
+    this.countDownToTime = date.getTime()
+    // console.log(date)
     var last_number = response.data.data[0]['last_number']
     var id_ujian = response.data.data[0]['id']
     axios.post('http://localhost/api2/military_inforces/member/member/pertanyaanByNo', 
