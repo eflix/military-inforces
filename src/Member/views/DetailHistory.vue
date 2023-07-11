@@ -11,6 +11,7 @@
       :tbody-transition-props="transProps"
     ></b-table> -->
     {{$route.params.UjianId}}
+    {{id}}
 
 </div>
 </template>
@@ -18,10 +19,10 @@
 <script>
 import axios from 'axios';
 
-// console.log(this.$route.params.UjianId)
+// console.log(id)
 
 export default {
-
+props: ["UjianId"],
 data(){
     return{
       username: this.$session.get("username")?this.$session.get("username"):"",
@@ -33,7 +34,8 @@ data(){
         fields: [
         {key : "nama", sortable: true},
         {key : "jabatan", sortable: true}
-        ]
+        ],
+      id : this.$route.params.UjianId
     }
   },
   methods:{
@@ -42,6 +44,7 @@ data(){
     }
   },
   mounted(){
+    console.log(this.id);
     axios.get('http://localhost/api2/military_inforces/member/member/tentor', {
       headers: {
         "Content-type": "application/json",
