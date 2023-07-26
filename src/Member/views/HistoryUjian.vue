@@ -65,7 +65,7 @@ data(){
     detail: function (id) {
       this.$router
                 .push({ path: '/member/detail_history/'+ id })
-                .then(() => { this.$router.go() })
+                // .then(() => { this.$router.go() })
     }
   },
   mounted(){

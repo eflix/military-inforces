@@ -15,6 +15,12 @@ const routes = [
     component: () => import('../views/Logintest.vue'),
   },
 
+  // ADMIN
+  {
+    path: '/admin',
+    name: 'Dashboard',
+    component: () => import('../Admin/views/Dashboard.vue'),
+  },
 
   // MEMBER
   {

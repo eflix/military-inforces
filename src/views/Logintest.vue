@@ -35,10 +35,11 @@ export default {
       if(this.input.username != "" || this.input.password != ""){
         console.log("authenticated")
         this.$session.start()
-              this.$session.set("username", this.input.username)
-              console.log(this.$session.get("username")); 
+              this.$session.set("username", this.input.username) 
+              this.$session.set("baseUrlAxios", this.input.username) 
               this.$router
-                .push({ path: '/member' })
+                // .push({ path: '/member' })
+                .push({ path: '/admin' })
                 .then(() => { this.$router.go() })
             //   Vue.http.headers.common['Authorization'] = 'Bearer ' + this.input.username
             //   this.$router.push('/panel/search')

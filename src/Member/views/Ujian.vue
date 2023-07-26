@@ -31,7 +31,7 @@
             <button class="btn btn-warning" v-if="parseInt(Pertanyaan.data[0]['no_urut'])>1" v-on:click.prevent="getPertanyaanByNo(parseInt(Pertanyaan.data[0]['no_urut'])-1,parseInt(TempUjian.data[0]['id']))">Sebelumnya</button>
             <button class="btn btn-success" v-if="parseInt(Pertanyaan.data[0]['no_urut'])<parseInt(TempUjian.data[0]['total_number'])" v-on:click.prevent="getPertanyaanByNo(parseInt(Pertanyaan.data[0]['no_urut'])+1,parseInt(TempUjian.data[0]['id']))">Selanjutnya</button>
             <button class="btn btn-success" v-if="answer && parseInt(Pertanyaan.data[0]['no_urut'])<parseInt(TempUjian.data[0]['total_number'])" v-on:click.prevent="saveNext(parseInt(TempUjian.data[0]['id']),parseInt(Pertanyaan.data[0]['id']),answer,parseInt(Pertanyaan.data[0]['no_urut']))">Simpan & Selanjutnya</button>
-            <button class="btn btn-success" v-if="answer && parseInt(Pertanyaan.data[0]['no_urut'])>=parseInt(TempUjian.data[0]['total_number'])">Simpan & Selesai</button>
+            <button class="btn btn-success" v-if="answer && parseInt(Pertanyaan.data[0]['no_urut'])>=parseInt(TempUjian.data[0]['total_number'])" v-on:click.prevent="saveFinish(parseInt(TempUjian.data[0]['id']))">Simpan & Selesai</button>
           </div>
         </b-col>
         <b-col sm="2" class="no-soal">
@@ -40,8 +40,6 @@
             <button v-else class="btn btn-danger" v-on:click.prevent="getPertanyaanByNo(parseInt(row.no_urut),parseInt(TempUjian.data[0]['id']))"> {{row.no_urut}}</button>
           </span>
         </b-col>
-        {{TempUjian.data[0]['id']}}
-        {{Pertanyaan.data[0]['id']}}
     </b-row>
   </div>
 </template>
@@ -120,7 +118,23 @@ methods: {
       .then( 
         this.getPertanyaanByNo(no+1,id_ujian),
         window.location.reload()
-        // this.answer = null
+      )
+      .catch((error) => console.log(error));
+    },
+    saveFinish(id_ujian){
+      axios.post('http://localhost/api2/military_inforces/member/member/finish_ujian', {
+              id_ujian : id_ujian
+            }, {
+          headers: {
+            "Content-type": "text/plain",
+            },
+        })
+      .then( 
+        // this.getPertanyaanByNo(no+1,id_ujian),
+        // window.location.reload()
+        this.$router
+                .push({ path: '/member/history' })
+                .then(() => { this.$router.go() })
       )
       .catch((error) => console.log(error));
     }
