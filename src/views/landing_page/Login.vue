@@ -44,7 +44,7 @@
 </template>
 
 <script>
-// import axios from 'axios';
+import axios from 'axios';
 // @ is an alias to /src
 import Header from '@/components/landing_page/Header.vue'
 import Navbar from '@/components/landing_page/Navbar.vue'
@@ -77,20 +77,51 @@ export default {
   },
   methods:{
     login(){
+      if (this.input.username != '' && this.input.password != '') {
+            axios.post('http://localhost/api2/military_inforces/auth/login', {
+                  username : this.input.username,
+                  password : this.input.password,
+                }, {
+              headers: {
+                "Content-type": "text/plain",
+                },
+            })
+          .then( 
+            (response) => {
+                console.log(response.data)
+                const status = response.data.status
+                const message = response.data.message
+    
+                alert(message)
+    
+                if (status == 1) {
+                    this.$session.start()
+                    this.$session.set("username", this.input.username)
+                    // console.log(this.$session.get("username")); 
+                    this.$router
+                      .push({ path: '/member' })
+                      .then(() => { this.$router.go() })
+                } 
+            }
+          )
+          .catch((error) => console.log(error));
+        } else {
+            alert('Data Tidak Lengkap')
+        }
       //make sure username OR password are not empty
-      if(this.input.username != "" || this.input.password != ""){
-        console.log("authenticated")
-        this.$session.start()
-              this.$session.set("username", this.input.username)
-              console.log(this.$session.get("username")); 
-              this.$router
-                .push({ path: '/member' })
-                .then(() => { this.$router.go() })
-            //   Vue.http.headers.common['Authorization'] = 'Bearer ' + this.input.username
-            //   this.$router.push('/panel/search')
-      }else{
-        console.log("Username and Password can not be empty")
-      }
+      // if(this.input.username != "" || this.input.password != ""){
+      //   console.log("authenticated")
+      //   this.$session.start()
+      //         this.$session.set("username", this.input.username)
+      //         console.log(this.$session.get("username")); 
+      //         this.$router
+      //           .push({ path: '/member' })
+      //           .then(() => { this.$router.go() })
+      //       //   Vue.http.headers.common['Authorization'] = 'Bearer ' + this.input.username
+      //       //   this.$router.push('/panel/search')
+      // }else{
+      //   console.log("Username and Password can not be empty")
+      // }
     }
   }
 }
