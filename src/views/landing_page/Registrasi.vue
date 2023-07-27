@@ -275,7 +275,7 @@ export default {
 var imagefile = document.querySelector('#file');
 formData.append("file", imagefile.files[0]);
   
-            axios.post('http://localhost/api2/military_inforces/auth/upload',
+            axios.post('https://bimbelmilitaryinforce.com/api/auth/upload',
                 formData,
                 {
                 headers: {

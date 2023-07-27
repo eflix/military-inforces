@@ -78,7 +78,7 @@ export default {
   methods:{
     login(){
       if (this.input.username != '' && this.input.password != '') {
-            axios.post('http://localhost/api2/military_inforces/auth/login', {
+            axios.post('https://bimbelmilitaryinforce.com/api/auth/login', {
                   username : this.input.username,
                   password : this.input.password,
                 }, {
