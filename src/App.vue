@@ -4,39 +4,25 @@
   </div>
 </template>
 
-
+<style scoped>
+  @import 'bootstrap/dist/css/bootstrap.min.css';
+  @import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css';
+</style>
+<style>
+  @font-face {
+    font-family: "BebasNeue-Regular";
+    src: local("BebasNeue"),
+    url(./fonts/BebasNeue/BebasNeue-Regular.ttf) format("truetype");
+  }
+  @font-face {
+    font-family: "Ubuntu-Regular";
+    src: local("Ubuntu"),
+    url(./fonts/Ubuntu/Ubuntu-Regular.ttf) format("truetype");
+  }
+</style>
 <script>
-
-// import { Header } from "./components/landing_page/Header.vue";
-// import { Navbar } from "./components/landing_page/Navbar.vue";
-// import { Footer } from "./components/landing_page/Footer.vue";
-
-// Component({
-//   components: {
-//     HeaderItems,
-//     SidebarHeader,
-//     SidebarItems,
-//   },
-// })
-export default  {
+export default {
   name : 'App',
-  // components: {
-  //   Header,
-  //   Navbar,
-  //   Footer,
-  // }
 }
 </script>
 
-<style>
-.content {
-  margin-left: 17%;
-  background-color: #FFFFFF;
-}
-/* #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-}
-.title {
-  margin-top: 15px;
-} */
-</style>

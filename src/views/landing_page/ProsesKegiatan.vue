@@ -1,5 +1,5 @@
 <template>
-  <div class="foto-kegiatan">
+  <div class="foto-kegiatan proses-kegiatan">
     <Header />
     <Navbar />
 
@@ -16,7 +16,7 @@
       <div class="container">
         <div class="row">
           <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-            <h1>Geleri FOTO KEGIATAN</h1>
+            <h1>Proses Kegiatan</h1>
           </div>
           <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
             <CoolLightBox 
@@ -64,7 +64,7 @@ import CoolLightBox from 'vue-cool-lightbox'
 import 'vue-cool-lightbox/dist/vue-cool-lightbox.min.css'
 
 export default {
-  name: 'FotoKegiatan',
+  name: 'ProsesKegiatan',
   components: {
     Header,
     Navbar,
@@ -79,7 +79,7 @@ export default {
           href: '/'
         },
         {
-          text: 'Foto Kegiatan',
+          text: 'Proses Kegiatan',
           active: true
         }
       ],

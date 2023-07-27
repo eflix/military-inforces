@@ -4,6 +4,13 @@ import Home from '../views/landing_page/Home.vue'
 import SekolahKedinasan from '../views/landing_page/SekolahKedinasan.vue'
 import FotoKegiatan from '../views/landing_page/FotoKegiatan.vue'
 import DaftarTentor from '../views/landing_page/DaftarTentor.vue'
+import TentangKami from '../views/landing_page/TentangKami.vue'
+import ProsesKegiatan from '../views/landing_page/ProsesKegiatan.vue'
+import SusunanOrganisasi from '../views/landing_page/SusunanOrganisasi.vue'
+import Registrasi from '../views/landing_page/Registrasi.vue'
+import Login from '../views/landing_page/Login.vue'
+import SyaratKetentuan from '../views/landing_page/SyaratKetentuan.vue'
+import RegistrasiSuccess from '../views/landing_page/RegistrasiSuccess.vue'
 
 Vue.use(VueRouter)
 
@@ -15,19 +22,8 @@ const routes = [
     component: () => import('../views/Logintest.vue'),
   },
 
-  // ADMIN
-  {
-    path: '/admin',
-    name: 'Dashboard',
-    component: () => import('../Admin/views/Dashboard.vue'),
-  },
 
   // MEMBER
-  {
-    path: '/member',
-    name: 'Dashboard',
-    component: () => import('../Member/views/Dashboard.vue'),
-  },
   {
     path: '/member/profile',
     name: 'Profile',
@@ -47,21 +43,6 @@ const routes = [
     path: '/member/soal_ujian',
     name: 'Soal Ujian',
     component: () => import('../Member/views/SoalUjian.vue'),
-  },
-  {
-    path: '/member/ujian',
-    name: 'Ujian',
-    component: () => import('../Member/views/Ujian.vue'),
-  },
-  {
-    path: '/member/history',
-    name: 'History',
-    component: () => import('../Member/views/HistoryUjian.vue'),
-  },
-  {
-    path: '/member/detail_history/:UjianId',
-    name: 'History',
-    component: () => import('../Member/views/DetailHistory.vue'),
   },
 
   // LANDING PAGE
@@ -84,6 +65,41 @@ const routes = [
     path: '/daftar_tentor',
     name: 'daftar_tentor',
     component: DaftarTentor
+  },
+  {
+    path: '/tentang_kami',
+    name: 'tentang_kami',
+    component: TentangKami
+  },
+  {
+    path: '/proses_kegiatan',
+    name: 'proses_kegiatan',
+    component: ProsesKegiatan
+  },
+  {
+    path: '/susunan_organisasi',
+    name: 'susunan_organisasi',
+    component: SusunanOrganisasi
+  },
+  {
+    path: '/registrasi',
+    name: 'registrasi',
+    component: Registrasi
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: Login
+  },
+  {
+    path: '/syarat_ketentuan',
+    name: 'syarat_ketentuan',
+    component: SyaratKetentuan
+  },
+  {
+    path: '/pembayaran',
+    name: 'registrasi_success',
+    component: RegistrasiSuccess
   }
 ]
 

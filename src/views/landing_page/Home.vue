@@ -2,145 +2,177 @@
   <div class="home">
     <Header />
     <Navbar />
-    <section>
-      <div class="container">
-      <div class="row mt-4">
-        <div class="col-md-5" style="padding-top:100px;">
-          <div class="d-flex h-100 text-white" style="height:100px;">
-            <div class="justify-content-center align-self-center">
-              <h5 class="btn-orange">SELAMAT DATANG DI</h5><hr>
-              <h1>MILITARY IN FORCES LEARNING CENTRE</h1><hr>
-              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi necessitatibus assumenda ea aliquid nihil, eaque atque magnam, minus reprehenderit inventore, sapiente neque eos mollitia dolores in saepe. Doloribus, quod aperiam.</p><hr>
-              <!-- <router-link class="btn btn-orange gabung_sekarang text-white" to="/member">GABUNG SEKARANG</router-link> -->
-              <a class="btn btn-orange gabung_sekarang text-white" href="/logintest">GABUNG SEKARANG</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-7">
-          <div>
-            <b-carousel
-              id="carousel-fade"
-              style="text-shadow: 0px 0px 2px #000"
-              fade
-              indicators
-              img-width="1024"
-              img-height="720"
-            >
-              <b-carousel-slide
-                caption="First Slide"
-                img-src="https://picsum.photos/1024/480/?image=10"
-              ></b-carousel-slide>
-              <b-carousel-slide
-                caption="Second Slide"
-                img-src="https://picsum.photos/1024/480/?image=12"
-              ></b-carousel-slide>
-              <b-carousel-slide
-                caption="Third Slide"
-                img-src="https://picsum.photos/1024/480/?image=22"
-              ></b-carousel-slide>
-            </b-carousel>
-          </div>
-        </div>
-      </div>
-
-      <div class="row text-white" style="margin-top:100px;">
-        <div class="col-md-4 mb-3">
-          <h5>SPESIALISASI KAMI</h5><br>
-          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi totam voluptas iusto harum mollitia consectetur repellat veniam impedit odit. Quis placeat, illum exercitationem quo hic minima ipsa facilis. Placeat, vero.</p><br>
-          <router-link class="btn btn-orange gabung_sekarang text-white" to="/register">LIHAT LEBIH BANYAK</router-link>
-        </div>
-        <div class="col-md-4 mb-3">
-          <div class="card">
-            <img src="https://picsum.photos/417/289/?image=22" class="card-img-top" alt="...">
-            <div class="card-img-overlay text-uppercase text-white font-weight-bolder" style="margin-top:150px;">
-              <h4 class="card-title">Walt Disney Signature</h4>
-              <router-link class="card-text text-white" to="/detail">Lihat Selengkapnya</router-link>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 mb-3">
-          <div class="card">
-            <img src="https://picsum.photos/417/289/?image=23" class="card-img-top" alt="...">
-            <div class="card-img-overlay text-uppercase text-white font-weight-bolder" style="margin-top:150px;">
-              <h4 class="card-title">Walt Disney Signature</h4>
-              <router-link class="card-text text-white" to="/detail">Lihat Selengkapnya</router-link>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 mb-3">
-          <div class="card">
-            <img src="https://picsum.photos/417/289/?image=54" class="card-img-top" alt="...">
-            <div class="card-img-overlay text-uppercase text-white font-weight-bolder" style="margin-top:150px;">
-              <h4 class="card-title">Walt Disney Signature</h4>
-              <router-link class="card-text text-white" to="/detail">Lihat Selengkapnya</router-link>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 mb-3">
-          <div class="card">
-            <img src="https://picsum.photos/417/289/?image=12" class="card-img-top" alt="...">
-            <div class="card-img-overlay text-uppercase text-white font-weight-bolder" style="margin-top:150px;">
-              <h4 class="card-title">Walt Disney Signature</h4>
-              <router-link class="card-text text-white" to="/detail">Lihat Selengkapnya</router-link>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 mb-3">
-          <div class="card">
-            <img src="https://picsum.photos/417/289/?image=31" class="card-img-top" alt="...">
-            <div class="card-img-overlay text-uppercase text-white font-weight-bolder" style="margin-top:150px;">
-              <h4 class="card-title">Walt Disney Signature</h4>
-              <router-link class="card-text text-white" to="/detail">Lihat Selengkapnya</router-link>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    </section>
-
-    <section class="bg-light d-flex align-items-center">
-      <div class="container">
-        <div class="row">
-
-          <div class="col-md-6">
+    
+    <section class="text-banner">
+        <div class="container">
             <div class="row">
-              <div class="col-md-12">
-                <h3>TENTANG KAMI</h3>
-                <P>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi quo quod voluptatibus, voluptatum natus ab odit ullam saepe, dicta sequi iure commodi dignissimos exercitationem. Nemo, repellendus quo! Corporis, fugit culpa.</P>
-                <router-link class="btn btn-orange gabung_sekarang text-white" to="/register">SELENGKAPNYA</router-link>
-              </div>
-            <!-- </div>
-            <div class="row mt-3"> -->
-              <div class="col-md-12 mt-3">
-                <h3 class="btn-orange">KEUNGGULAN KAMI</h3>
-                <ul>
-                  <li>1. Lorem ipsum dolor sit.</li>
-                  <li>2. Lorem ipsum dolor sit.</li>
-                  <li>3. Lorem ipsum dolor sit.</li>
-                  <li>4. Lorem ipsum dolor sit.</li>
-                  <li>5. Lorem ipsum dolor sit.</li>
-                </ul>
+                <div class="col-xl-6 col-lg-7 col-md-12 col-sm-12">
+                  <div class="dtext-banner">
+                      <h4>SELAMAT DATANG DI</h4>
+                      <h1>MILITARY IN FORCES LEARNING CENTRE</h1>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                      <p class="btnz-index"><a href="/registrasi" class="btn-default">GABUNG SEKARANG</a></p>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="banner">
+        <table class="table-banner">
+            <tr>
+                <td>
+                  <b-carousel
+                    id="carousel-1"
+                    v-model="slide"
+                    :interval="900000"
+                    controls
+                    indicators
+                    background="#ababab"
+                    img-width="1024"
+                    img-height="480"
+                    style="text-shadow: 1px 1px 2px #333;"
+                    @sliding-start="onSlideStart"
+                    @sliding-end="onSlideEnd"
+                  >
+                    <!-- Text slides with image -->
+                    <b-carousel-slide
+                      img-src="assets/images/logo.png"
+                    >
+                      <img src="../../assets/images/banner/banner1.jpg">
+                    </b-carousel-slide>
+
+                    <b-carousel-slide
+                      img-src="assets/images/logo.png"
+                    >
+                      <img src="../../assets/images/banner/banner1.jpg">
+                    </b-carousel-slide>
+
+                    <b-carousel-slide
+                      img-src="assets/images/logo.png"
+                    >
+                      <img src="../../assets/images/banner/banner1.jpg">
+                    </b-carousel-slide>
+                  </b-carousel>
+                </td>
+            </tr>
+        </table>
+    </section>
+    <section class="spesialis-kami">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
+            <div class="dspesialis-kami">
+              <div class="first-sp">
+                <h2>SPESIALISASI KAMI</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
+                <a href="/sekolah_kedinasan" class="btn-default">lihat Lebih banyak</a>
               </div>
             </div>
           </div>
-
-          <div class="col-md-6">
-            <img src="https://picsum.photos/250/400/?image=41" class="" alt="...">
+          <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
+            <a href="" class="">
+              <div class="dspesialis-kami">
+                <img src="../../assets/images/spesialis/1.jpg">
+                <div class="text-foot">
+                  <h2>KORPS POLRI</h2>
+                  <p><a href="" class="">lihat Selengkapnya</a></p>
+                </div>
+              </div>
+            </a>
           </div>
-
+          <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
+            <a href="" class="">
+              <div class="dspesialis-kami">
+                <img src="../../assets/images/spesialis/2.jpg">
+                <div class="text-foot">
+                  <h2>Tentara nasional indonesia</h2>
+                  <p><a href="" class="">lihat Selengkapnya</a></p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
+            <a href="" class="">
+              <div class="dspesialis-kami">
+                <img src="../../assets/images/spesialis/3.jpg">
+                <div class="text-foot">
+                  <h2>Stan</h2>
+                  <p><a href="" class="">lihat Selengkapnya</a></p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
+            <a href="" class="">
+              <div class="dspesialis-kami">
+                <img src="../../assets/images/spesialis/4.jpg">
+                <div class="text-foot">
+                  <h2>Stin</h2>
+                  <p><a href="" class="">lihat Selengkapnya</a></p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
+            <a href="" class="">
+              <div class="dspesialis-kami">
+                <img src="../../assets/images/spesialis/5.jpg">
+                <div class="text-foot">
+                  <h2>CET BEA cukai</h2>
+                  <p><a href="" class="">lihat Selengkapnya</a></p>
+                </div>
+              </div>
+            </a>
+          </div>
         </div>
-
       </div>
     </section>
-
-    <section class="tunggu-apa-lagi d-flex align-items-center">
+    <section class="tentang-kami">
+      <img src="../../assets/images/icon1.png" class="icon1">
       <div class="container">
         <div class="row">
-          <div class="col-md-7"></div>
-          <div class="col md-5">
-            <h2 class="btn-orange">TUNGGU APA LAGI</h2><hr>
-            <p class="text-white">Segera bergabung bersama <span class="btn-orange">Military in Forces Learning Centre</span> & gapai impian-mu berkarir di POLRI maupun TNI atau Sekolah Kedinasan lainnya.</p><hr>
-            <router-link class="btn btn-orange gabung_sekarang text-white" to="/register">GABUNG SEKARANG</router-link>
+          <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+            <table class="tb-tentang-kami">
+              <tr>
+                <td>
+                  <h2>TENTANG KAMI</h2>
+                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+                  <p><a href="/tentang_kami" class="btn-default">Selengkapnya</a></p>
+                  <h3>Keunggulan kami</h3>
+                  <ol>
+                    <li>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</li>
+                    <li>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</li>
+                    <li>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</li>
+                    <li>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</li>
+                    <li>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</li>
+                  </ol>
+                </td>
+                <td>
+                  <img src="../../assets/images/icon2.png" class="icon2">
+                  <img src="../../assets/images/tentang-kami.jpg">
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="quotes">
+      <div class="oquotes">
+        <div class="container">
+          <div class="row">
+            <div class="col-xl-5 col-lg-6 col-md-12 col-sm-12">
+              <div class="quotes-img">
+                <img src="../../assets/images/img1.png" class="img-quotes">
+              </div>
+            </div>
+            <div class="col-xl-7 col-lg-6 col-md-12 col-sm-12">
+              <div class="quotes-text">
+                <h1>Tunggu apa lagi?</h1>
+                <p>Segera bergabung bersama <span class="font-merk">Military in Forces Learning Centre</span> & gapai impian-mu berkarir di POLRI maupun TNI atau Sekolah Kedinasan lainnya.</p>
+                <p><a href="/registrasi" class="btn-default">GABUNG SEKARANG</a></p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -162,6 +194,13 @@ export default {
     Header,
     Navbar,
     Footer
-  }
+  },
+  data () {
+    return {
+      items: [
+        
+      ],
+    }
+  },
 }
 </script>

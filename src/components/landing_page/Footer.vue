@@ -1,36 +1,61 @@
 <template>
-
-<div class="footer">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 mt-4">
-                <img src="../../assets/images/logo.png" alt="logo" width="40%" style="">
+    <div class="footer">
+        <section class="menu-footer">
+            <div class="container">
                 <div class="row">
-                    <div class="col-md-6">
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum excepturi cupiditate inventore, at explicabo atque quae aperiam impedit eum ipsa voluptate doloremque saepe obcaecati iure velit exercitationem ullam nisi sint!</p>
+                    <div class="col-xl-5 col-lg-5 col-md-12">
+                        <img src="../../assets/images/logo.png" class="img-footer">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
+                    </div>
+                    <div class="col-xl-1 col-lg-1 col-md-12"></div>
+                    <div class="col-xl-6 col-lg-6 col-md-12">
+                        <div class="row">
+                            <div class="col-xl-5 col-lg-5 col-md-5">
+                                <h3>SITEMAP</h3>
+                                <ul class="list-menu-footer">
+                                    <li>
+                                        <a href="/">Beranda</a>
+                                    </li>
+                                    <li>
+                                        <a href="/sekolah_kedinasan">Sekolah Kedinasan</a>
+                                    </li>
+                                    <li>
+                                        <a href="/tentang_kami">Tentang Kami</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-xl-7 col-lg-7 col-md-7">
+                                <h3>INFORMASI KONTAK</h3>
+                                <ul class="list-menu-footer">
+                                    <li>
+                                        <i class="fas fa-building"></i> <span>Military In Forces Learning Centre</span>
+                                    </li>
+                                    <li>
+                                        <a href=""><i class="fab fa-whatsapp"></i> <span>0812 3456 7890</span></a>
+                                    </li>
+                                    <li>
+                                        <a href=""><i class="fas fa-at"></i> <span>help@militaryinforces.com</span></a>
+                                    </li>
+                                    <li>
+                                        <i class="far fa-map"></i> <span>Jl. Anggrek No. 12 Jebres, Surakarta, Jawa Tengah <p><a href="">Lihat di Google Maps</a></p></span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <!-- <div class="col-md-2"></div> -->
-            <div class="col-md-2 mt-4">
-                <h5>SITEMAP</h5>
-                <p class="mt-4 mb-0">Beranda</p><br>
-                <p class="mb-0">Sekolah Kedinasan</p><br>
-                <p class="mb-0">Tentang Kami</p><br>
+        </section>
+        <section class="tiny-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12 col-lg-12 text-center">
+                        <p><i class="far fa-copyright"></i> &nbsp; 2023 Hak Cipta Oleh <span class="font-merk">Military In Forces Learning Centre</span>. &nbsp; Dilindungi Undang-undang.</p>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-4 mt-4">
-                <h5>INFORMASI KONTAK</h5>
-                <p class="mt-4 mb-0"><b-icon-building> </b-icon-building> Military In Forces Learning Centre</p><br>
-                <p class="mb-0"><b-icon-telephone> </b-icon-telephone> 09875744848</p><br>
-                <p class="mb-0"><b-icon-envelope> </b-icon-envelope> help@militaryinforces.com</p><br>
-                <p class="mb-0"><b-icon-geo-alt> </b-icon-geo-alt> Jl. Anggrek No. 12 Jebres, Surakarta, Jawa Tengah</p><br>
-            </div>
-        </div>
+        </section>
     </div>
-    <div class="copyright text-center d-flex align-items-center justify-content-center">
-        <p class="text-white mb-0"><i class="cil-copyright"></i> 2023. Hak Cipta Oleh <span class="btn-orange">Military In Forces Learning Centre.</span> Dilindungi Undang-Undang</p>
-    </div>
-</div>
   
 </template>
 
