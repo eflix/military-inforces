@@ -5,9 +5,9 @@
         <b-navbar-nav class="ml-auto">
           
             <b-nav-item-dropdown :text="username" right class="mr-2">           
-                    <li class="nav-item header">
+                    <!-- <li class="nav-item header">
                         <router-link class="nav-link" to="/member/profile">Profile</router-link>
-                    </li>
+                    </li> -->
                     <li class="nav-item header">
                         <!-- <router-link :to="{path : '/'}"><button>Sign Out</button></router-link> -->
                         <button class="btn btn-link"  @click="logout">Sign Out</button>

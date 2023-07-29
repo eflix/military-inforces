@@ -101,6 +101,13 @@ const routes = [
     name: 'registrasi_success',
     component: RegistrasiSuccess
   }
+
+  // ADMIN
+  // {
+  //   path: '/admin',
+  //   name: 'registrasi_success',
+  //   component: RegistrasiSuccess
+  // }
 ]
 
 const router = new VueRouter({

@@ -68,7 +68,7 @@
           </li> -->
 
           <li id="links_0">
-            <router-link to="/member" active>
+            <router-link to="/admin" active>
               <i class="bx bx-grid-alt"></i>
               <span class="links_name">Dashboard</span>
               <span data-target="links_0"
@@ -77,15 +77,15 @@
           </li>
 
           <li id="links_1">
-            <router-link to="/member/jadwal_pelaksanaan" >
+            <router-link to="/admin/member" >
               <i class="bx bx-calendar"></i>
-              <span class="links_name">Jadwal Pelaksanaan</span>
+              <span class="links_name">Daftar Member</span>
               <span data-target="links_1"
-              class="tooltip">Jadwal Pelaksanaan</span>
+              class="tooltip">Daftar Member</span>
             </router-link>
           </li>
 
-          <li id="links_2">
+          <!-- <li id="links_2">
             <router-link to="/member/tentor" >
               <i class="bx bxs-user"></i>
               <span class="links_name">Tentor</span>
@@ -110,7 +110,7 @@
               <span data-target="links_4"
               class="tooltip">Riwayat Ujian</span>
             </router-link>
-          </li>
+          </li> -->
 
           <li id="links_100">
             <a href="#" class="" @click="redirectReload">
@@ -234,7 +234,7 @@
         type: Array,
         default: () => [
           {
-            link: '/member',
+            link: '/admin',
             name: 'Dashboard',
             tooltip: 'Dashboard',
             icon: 'bx-grid-alt',
@@ -399,7 +399,7 @@
     methods: {
       redirectReload() {
       this.$router
-          .push({ path: '/' })
+          .push({ path: '/login' })
           .then(() => { this.$router.go() })
       this.$session.destroy()
       },

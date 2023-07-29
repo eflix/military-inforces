@@ -240,7 +240,7 @@ export default {
 //     }
 // })   
         if (this.input.email != '' && this.input.no_hp != '' && this.input.nama != '' && this.input.asal_sekolah != '') {
-            axios.post('http://localhost/api2/military_inforces/auth/register', {
+            axios.post('https://bimbelmilitaryinforce.com/api/auth/register', {
                   email : this.input.email,
                   no_hp : this.input.no_hp,
                   nama : this.input.nama,
@@ -249,6 +249,7 @@ export default {
                 }, {
               headers: {
                 "Content-type": "text/plain",
+                // "Access-Control-Allow-Origin": "*",
                 },
             })
           .then( 

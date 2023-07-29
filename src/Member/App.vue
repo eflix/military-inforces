@@ -30,8 +30,8 @@ export default  {
   },
   methods:{
     cekLogin : function (){
-      if (this.$session.get("username")){
-        // console.log(this.$session.get("username"))
+      if (this.$session.get("username") && this.$session.get("role_id") == 2){
+        console.log('member')
       } else {
       this.logout()
       }
@@ -39,7 +39,7 @@ export default  {
     logout: function () {
       this.$session.destroy()
       this.$router
-                .push({ path: '/' })
+                .push({ path: '/login' })
                 .then(() => { this.$router.go() })
     }
   },

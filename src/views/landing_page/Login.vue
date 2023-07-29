@@ -30,8 +30,8 @@
                     Login
                 </button>
 
-                <!-- <p>Username is: {{input.username}}</p>
-                <p>Password is: {{input.password}}</p> -->
+                <p>Username is: {{input.username}}</p>
+                <p>Password is: {{input.password}}</p>
             </form>
           </div>
           
@@ -88,19 +88,31 @@ export default {
             })
           .then( 
             (response) => {
-                console.log(response.data)
+                console.log(response.data.data['role_id'])
                 const status = response.data.status
                 const message = response.data.message
+                const role_id = response.data.data['role_id']
+                const nama = response.data.data['nama']
     
                 alert(message)
     
                 if (status == 1) {
                     this.$session.start()
                     this.$session.set("username", this.input.username)
-                    // console.log(this.$session.get("username")); 
-                    this.$router
+                    this.$session.set("role_id", role_id)
+                    this.$session.set("nama", nama)
+
+                    if (role_id == 2){
+                      this.$router
                       .push({ path: '/member' })
                       .then(() => { this.$router.go() })
+                    } else {
+                      this.$router
+                      .push({ path: '/admin' })
+                      .then(() => { this.$router.go() })
+                    }
+                    
+                    
                 } 
             }
           )

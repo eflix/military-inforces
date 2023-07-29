@@ -4,7 +4,7 @@
         <!-- <img src="../../assets/images/logo.png" alt="logo" width="10%" class="position-absolute" style="margin-top:70px;"> -->
         <b-navbar-nav class="ml-auto">
           
-            <b-nav-item-dropdown :text="username" right class="mr-2">           
+            <b-nav-item-dropdown :text="nama" right class="mr-2">           
                     <li class="nav-item header">
                         <router-link class="nav-link" to="/member/profile">Profile</router-link>
                     </li>
@@ -25,7 +25,9 @@ export default {
   name : 'Header',
   data(){
     return{
-      username: this.$session.get("username")?this.$session.get("username"):""
+      username: this.$session.get("username")?this.$session.get("username"):"",
+      nama: this.$session.get("nama")?this.$session.get("nama"):"",
+      role_id: this.$session.get("role_id")?this.$session.get("role_id"):""
     }
   },
   methods : {
