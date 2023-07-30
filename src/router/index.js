@@ -100,14 +100,14 @@ const routes = [
     path: '/pembayaran',
     name: 'registrasi_success',
     component: RegistrasiSuccess
-  }
+  },
 
   // ADMIN
-  // {
-  //   path: '/admin',
-  //   name: 'registrasi_success',
-  //   component: RegistrasiSuccess
-  // }
+  {
+    path: '/admin/member',
+    name: 'admin',
+    component: () => import('../Admin/views/Member.vue'),
+  }
 ]
 
 const router = new VueRouter({
