@@ -46,7 +46,7 @@
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlFile1">Upload Foto diri Anda</label>
-                    <input type="file" class="form-control-file" id="file" v-on:change="onChangeFileUpload()">
+                    <input type="file" class="form-control-file" id="file" name="file" v-on:change="onChangeFileUpload()">
                 </div>
                 <div class="form-group text-pilih-paket">
                     <label for="">Pilih Paket Anda</label>
@@ -223,7 +223,7 @@ export default {
         no_hp: "",
         nama: "",
         asal_sekolah: "",
-        file:"",
+        path_foto:"",
         caegory:1,
         paket:[],
       }
@@ -231,14 +231,6 @@ export default {
   },
   methods :{
     registrasi(){
-//         var formData = new FormData();
-// var imagefile = document.querySelector('#file');
-// formData.append("image", imagefile.files[0]);
-// axios.post('upload', formData, {
-//     headers: {
-//       'Content-Type': 'multipart/form-data'
-//     }
-// })   
         if (this.input.email != '' && this.input.no_hp != '' && this.input.nama != '' && this.input.asal_sekolah != '') {
             axios.post('https://bimbelmilitaryinforce.com/api/auth/register', {
                   email : this.input.email,
@@ -246,6 +238,7 @@ export default {
                   nama : this.input.nama,
                   asal_sekolah : this.input.asal_sekolah,
                   category : this.input.category,
+                  path_foto : this.input.path_foto,
                 }, {
               headers: {
                 "Content-type": "text/plain",
@@ -254,7 +247,7 @@ export default {
             })
           .then( 
             (response) => {
-                console.log(response.data)
+                // console.log(response.data)
                 const status = response.data.status
                 const message = response.data.message
     
@@ -290,9 +283,28 @@ formData.append("file", imagefile.files[0]);
               console.log('FAILURE!!');
             });
       },
-    //   onChangeFileUpload(){
-    //     // this.file = this.$refs.file.files[0];
-    //   }
+      onChangeFileUpload(){
+        var formData = new FormData();
+        var imagefile = document.querySelector('#file');
+        formData.append("file", imagefile.files[0]);
+
+        this.path_foto = imagefile.files[0]['name']
+        
+        axios.post('https://bimbelmilitaryinforce.com/api/auth/upload',
+            formData,
+            {
+            headers: {
+                'Content-Type': 'multipart/form-data'
+            }
+            }
+            ).then(function(data){
+                console.log(data.data);
+                alert('Upload file berhasil')
+            })
+            .catch(function(){
+                console.log('FAILURE!!');
+            });
+      }
   }
 }
 </script>
