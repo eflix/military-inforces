@@ -399,7 +399,7 @@
     methods: {
       redirectReload() {
       this.$router
-          .push({ path: '/' })
+          .push({ path: '/login' })
           .then(() => { this.$router.go() })
       this.$session.destroy()
       },
