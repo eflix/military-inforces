@@ -19,58 +19,65 @@
         </b-card-body>
     </b-card>
 
-    <!-- <b-card
-            header-text-variant="h1"
+    <b-card
+            header-text-variant="h5"
             border-variant="warning"
-            header="Paket"
+            header="Ubah Password"
             header-bg-variant="transparent"
             align="left"
-            class="mt-4"
         >
         <b-card-body>
-
-            <b-card-text>
-                Coming Soon
-            </b-card-text>
+                <form>
+                <b-row>
+                  <div class="mb-6">
+                      <label for="password">Password</label>
+                      <input type="text" id="password" class="form-control" v-model="password" required/>
+                  </div>
+                  <div class="mb-6" style="margin-top:30px; margin-left:5px;">
+                    <button class="form-control btn btn-success" type="submit" v-on:click.prevent = "ubahPassword()">
+                        Simpan
+                    </button>
+                  </div>
+                </b-row>
+                </form>
 
         </b-card-body>
-    </b-card> -->
-    <!-- {{products.data[0]}} -->
+    </b-card>
 
 </div>
 </template>
 
 <script>
 import axios from 'axios';
-// axios.defaults.headers.common['Content-Type'] = 'application/x-www-form-urlencoded'
-// axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
 
 export default {
 data(){
     return{
       username: this.$session.get("username")?this.$session.get("username"):"",
-      products:[]
+      products:[],
+      password:"",
+      id_user:""
     }
   },
   methods:{
      setProducts(data){
       this.products = data
+    },
+    ubahPassword(){
+
     }
   },
   mounted(){
     axios.get('http://localhost/api2/military_inforces/member/profile/profile', {
       headers: {
         "Content-type": "application/json",
-        //  "Clear-Site-Data": "*",
-        //  'Content-Type': 'application/x-www-form-urlencoded'
-          // "Access-Control-Allow-Origin": "*",
-          // "Access-Control-Allow-Methods": "GET, POST, PATCH, PUT, DELETE, OPTIONS",
-          // "Access-Control-Allow-Headers": "Origin, Content-Type, X-Auth-Token, Accept",
-          //     'content-type': 'application/json',
-          //     'Access-Control-Allow-Credentials' : true,
         }
     })
-  .then( (response) =>this.setProducts(response.data))
+  .then( (response) =>
+  {
+    this.setProducts(response.data)
+    console.log(response.data.data[0])
+  })
   .catch((error) => console.log(error));
   }
 }

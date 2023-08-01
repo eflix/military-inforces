@@ -30,8 +30,8 @@
                     Login
                 </button>
 
-                <p>Username is: {{input.username}}</p>
-                <p>Password is: {{input.password}}</p>
+                <!-- <p>Username is: {{input.username}}</p>
+                <p>Password is: {{input.password}}</p> -->
             </form>
           </div>
           
