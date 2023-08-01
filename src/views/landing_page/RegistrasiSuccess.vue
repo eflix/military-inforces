@@ -28,17 +28,17 @@
             <form>
                 <div class="form-group">
                     <label for="exampleFormControlFile1">Upload Bukti Pembayaran</label>
-                    <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                    <input type="file" class="form-control-file" id="file" name="file" v-on:change="onChangeFileUpload()" required>
                 </div>
                 <div class="mb-3">
                     <label for="username">Atas Nama pengirim </label>
-                    <input type="text" id="" class="form-control" />
+                    <input type="text" id="nama" class="form-control" v-model="input.nama" required/>
                 </div>
                 <div class="mb-3">
                     <label for="password">Transfer melalui </label>
-                    <input type="text" id="" class="form-control" />
+                    <input type="text" id="transfer_by" class="form-control" v-model="input.transfer_by" required/>
                 </div>
-                <button class="btn-daftar" type="submit" v-on:click.prevent = "login()">
+                <button class="btn-daftar" type="submit" v-on:click.prevent = "uploadBuktiBayar()">
                     Kirim Bukti Pembayaran
                 </button>
             </form>
@@ -59,6 +59,7 @@
 </template>
 
 <script>
+import axios from 'axios';
 // @ is an alias to /src
 import Header from '@/components/landing_page/Header.vue'
 import Navbar from '@/components/landing_page/Navbar.vue'
@@ -86,11 +87,64 @@ export default {
           text: 'Pembayaran',
           active: true
         }
-      ]
+      ],
+      input:{
+        path_foto:'',
+        nama:'',
+        transfer_by:''
+      }
     }
   },
   methods:{
+    uploadBuktiBayar(){
+      axios.post('https://bimbelmilitaryinforce.com/api/auth/bukti_bayar', {
+                  nama : this.input.nama,
+                  transfer_by : this.input.transfer_by,
+                  path_foto : this.input.path_foto,
+                }, {
+              headers: {
+                "Content-type": "text/plain",
+                // "Access-Control-Allow-Origin": "*",
+                },
+            })
+          .then( 
+            (response) => {
+                // console.log(response.data)
+                const status = response.data.status
+                const message = response.data.message
+                
+                alert(message)
     
+                // if (status == 1) {
+                //     this.$router
+                //     .push({ path: '/pembayaran' })
+                // } 
+            }
+          )
+          .catch((error) => console.log(error));
+    },
+    onChangeFileUpload(){
+        var formData = new FormData();
+        var imagefile = document.querySelector('#file');
+        formData.append("file", imagefile.files[0]);
+
+        this.input.path_foto = imagefile.files[0]['name']
+        
+        axios.post('https://bimbelmilitaryinforce.com/api/auth/uploadBuktiBayar',
+          formData,
+            {
+            headers: {
+                'Content-Type': 'multipart/form-data'
+            }
+            }
+            ).then(function(data){
+                console.log(data.data);
+                alert('Upload file berhasil')
+            })
+            .catch(function(){
+                console.log('FAILURE!!');
+            });
+    }
   }
 }
 </script>

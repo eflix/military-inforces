@@ -250,7 +250,7 @@ export default {
                 // console.log(response.data)
                 const status = response.data.status
                 const message = response.data.message
-    
+                
                 alert(message)
     
                 if (status == 1) {
@@ -288,7 +288,7 @@ formData.append("file", imagefile.files[0]);
         var imagefile = document.querySelector('#file');
         formData.append("file", imagefile.files[0]);
 
-        this.path_foto = imagefile.files[0]['name']
+        this.input.path_foto = imagefile.files[0]['name']
         
         axios.post('https://bimbelmilitaryinforce.com/api/auth/upload',
             formData,
