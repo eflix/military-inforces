@@ -38,7 +38,7 @@
                     <label for="password">Transfer melalui </label>
                     <input type="text" id="transfer_by" class="form-control" v-model="input.transfer_by" required/>
                 </div>
-                <button class="btn-daftar" type="submit" v-on:click.prevent = "uploadBuktiBayar()">
+                <button class="btn-daftar" type="submit" v-on:click.prevent = "simpanBuktiBayar()">
                     Kirim Bukti Pembayaran
                 </button>
             </form>
@@ -96,32 +96,34 @@ export default {
     }
   },
   methods:{
-    uploadBuktiBayar(){
-      axios.post('https://bimbelmilitaryinforce.com/api/auth/bukti_bayar', {
+    simpanBuktiBayar(){
+      if (this.input.transfer_by != '' && this.input.path_foto != '' && this.input.nama != '') {
+        axios.post('https://bimbelmilitaryinforce.com/api/auth/simpanBuktiBayar', {
                   nama : this.input.nama,
                   transfer_by : this.input.transfer_by,
                   path_foto : this.input.path_foto,
                 }, {
               headers: {
                 "Content-type": "text/plain",
-                // "Access-Control-Allow-Origin": "*",
                 },
             })
           .then( 
             (response) => {
-                // console.log(response.data)
                 const status = response.data.status
                 const message = response.data.message
                 
                 alert(message)
     
-                // if (status == 1) {
-                //     this.$router
-                //     .push({ path: '/pembayaran' })
-                // } 
+                if (status == 1) {
+                    this.$router
+                    .push({ path: '/login' })
+                } 
             }
           )
           .catch((error) => console.log(error));
+      } else {
+        alert("Data Tidak Lengkap");
+      }
     },
     onChangeFileUpload(){
         var formData = new FormData();
