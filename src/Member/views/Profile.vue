@@ -20,6 +20,7 @@
     </b-card>
 
     <b-card
+            style="margin-top:20px;"
             header-text-variant="h5"
             border-variant="warning"
             header="Ubah Password"
@@ -29,11 +30,15 @@
         <b-card-body>
                 <form>
                 <b-row>
-                  <div class="mb-6">
+                  <div class="col-md-5">
                       <label for="password">Password</label>
-                      <input type="text" id="password" class="form-control" v-model="password" required/>
+                      <input type="password" id="password" class="form-control" v-model="password" required/>
                   </div>
-                  <div class="mb-6" style="margin-top:30px; margin-left:5px;">
+                  <div class="col-md-5">
+                      <label for="password">Ulangi Password</label>
+                      <input type="password" id="password1" class="form-control" v-model="password1" required/>
+                  </div>
+                  <div class="col-md-2" style="margin-top:30px;">
                     <button class="form-control btn btn-success" type="submit" v-on:click.prevent = "ubahPassword()">
                         Simpan
                     </button>
@@ -56,7 +61,8 @@ data(){
       username: this.$session.get("username")?this.$session.get("username"):"",
       products:[],
       password:"",
-      id_user:""
+      password1:"",
+      id:this.$session.get("id")?this.$session.get("id"):""
     }
   },
   methods:{
@@ -64,7 +70,36 @@ data(){
       this.products = data
     },
     ubahPassword(){
-
+      console.log(this.id)
+      if (this.password != '' && this.password1 != '') {
+        if (this.password == this.password1) {
+          axios.post('https://bimbelmilitaryinforce.com/api/member/profile/update_user', {
+                    password : this.password,
+                    id : this.id,
+                  }, {
+                headers: {
+                  "Content-type": "text/plain",
+                  },
+              })
+            .then( 
+              (response) => {
+                  const status = response.data.status
+                  const message = response.data.message
+                  
+                  alert(message)
+      
+                  if (status == 1) {
+                      window.location.reload()
+                  } 
+              }
+            )
+            .catch((error) => console.log(error));
+        } else {
+          alert("Password tidak sama");
+        }
+      } else {
+        alert("Password harus di isi");
+      }
     }
   },
   mounted(){
@@ -76,7 +111,6 @@ data(){
   .then( (response) =>
   {
     this.setProducts(response.data)
-    console.log(response.data.data[0])
   })
   .catch((error) => console.log(error));
   }

@@ -93,6 +93,7 @@ export default {
                 const message = response.data.message
                 const role_id = response.data.data['role_id']
                 const nama = response.data.data['nama']
+                const id = response.data.data['id']
     
                 alert(message)
     
@@ -101,6 +102,7 @@ export default {
                     this.$session.set("username", this.input.username)
                     this.$session.set("role_id", role_id)
                     this.$session.set("nama", nama)
+                    this.$session.set("id", id)
 
                     if (role_id == 2){
                       this.$router

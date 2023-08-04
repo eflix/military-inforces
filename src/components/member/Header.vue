@@ -34,7 +34,7 @@ export default {
     logout: function () {
         this.$session.destroy()
         this.$router
-                  .push({ path: '/' })
+                  .push({ path: '/login' })
                   .then(() => { this.$router.go() })
       }
   }
