@@ -85,16 +85,16 @@
             </router-link>
           </li>
 
-          <!-- <li id="links_2">
-            <router-link to="/member/tentor" >
+          <li id="links_2">
+            <router-link to="/admin/bukti_bayar" >
               <i class="bx bxs-user"></i>
-              <span class="links_name">Tentor</span>
+              <span class="links_name">Bukti Pembayaran</span>
               <span data-target="links_2"
-              class="tooltip">Tentor</span>
+              class="tooltip">Bukti Pembayaran</span>
             </router-link>
           </li>
 
-          <li id="links_3">
+          <!-- <li id="links_3">
             <router-link to="/member/soal_ujian" >
               <i class="bx bx-book-open"></i>
               <span class="links_name">Soal / Ujian</span>

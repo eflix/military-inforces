@@ -57,7 +57,7 @@ data(){
     }
   },
   mounted(){
-    axios.get('http://localhost/api2/military_inforces/admin/member/all', {
+    axios.get('https://bimbelmilitaryinforce.com/api/admin/member/all', {
       headers: {
         "Content-type": "application/json",
         }
