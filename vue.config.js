@@ -10,13 +10,13 @@ module.exports = defineConfig({
     },
     'member': {
       entry: './src/Member/main.js',
-      template: 'public/index.html',
+      template: 'public/member.html',
       title: 'Member',
       chunks: [ 'chunk-vendors', 'chunk-common', 'member' ]
     },
     'admin': {
       entry: './src/Admin/main.js',
-      template: 'public/index.html',
+      template: 'public/admin.html',
       title: 'Admin',
       chunks: [ 'chunk-vendors', 'chunk-common', 'admin' ]
     }
