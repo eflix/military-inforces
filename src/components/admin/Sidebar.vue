@@ -78,7 +78,7 @@
 
           <li id="links_1">
             <router-link to="/admin/member" >
-              <i class="bx bx-calendar"></i>
+              <i class="bx bx-user"></i>
               <span class="links_name">Daftar Member</span>
               <span data-target="links_1"
               class="tooltip">Daftar Member</span>
@@ -87,10 +87,46 @@
 
           <li id="links_2">
             <router-link to="/admin/bukti_bayar" >
-              <i class="bx bxs-user"></i>
+              <i class="bx bx-credit-card"></i>
               <span class="links_name">Bukti Pembayaran</span>
               <span data-target="links_2"
               class="tooltip">Bukti Pembayaran</span>
+            </router-link>
+          </li>
+
+          <li id="links_3">
+            <router-link to="/admin/input_kategori" >
+              <i class="bx bx-task"></i>
+              <span class="links_name">Daftar Kategori Soal</span>
+              <span data-target="links_3"
+              class="tooltip">Daftar Kategori Soal</span>
+            </router-link>
+          </li>
+
+          <li id="links_4">
+            <router-link to="/admin/input_soal" >
+              <i class="bx bx-task"></i>
+              <span class="links_name">Daftar Soal</span>
+              <span data-target="links_4"
+              class="tooltip">Daftar Soal</span>
+            </router-link>
+          </li>
+
+          <li id="links_5">
+            <router-link to="/admin/input_harga_bimbingan" >
+              <i class="bx bx-task"></i>
+              <span class="links_name">Daftar Harga Bimbingan</span>
+              <span data-target="links_5"
+              class="tooltip">Daftar Harga Bimbingan</span>
+            </router-link>
+          </li>
+        
+          <li id="links_6">
+            <router-link to="/admin/input_galeri" >
+              <i class="bx bx-task"></i>
+              <span class="links_name">Daftar Galery</span>
+              <span data-target="links_6"
+              class="tooltip">Daftar Galery</span>
             </router-link>
           </li>
 

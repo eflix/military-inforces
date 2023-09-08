@@ -37,12 +37,9 @@
   </div>
 </template>
 
-<script src="https://smtpjs.com/v3/smtp.js"> </script>
-
-
 <script>
 import axios from 'axios';
-import {Email} from "../../assets/smtp/smtp.js";
+
 export default {
 data(){
     return{
@@ -55,29 +52,8 @@ data(){
       this.member = data
     },
     detail: function (id) {
-      console.log(id);
-      // this.$router
-      //           .push({ path: '/admin/detail_member/'+ id })
-      Email.send({
-        Host : "smtp.elasticemail.com",
-        Username : "eflixjunior@gmail.com",
-        Password : "0790125A28DF458484D960BAA688732E33FF",
-        To : 'lekdarmawan99@gmail.com',
-        From : "you@isp.com",
-        Subject : "This is the subject",
-        Body : "And this is the body"
-    }).then(
-      message => alert(message)
-    ).catch((error) => console.log(error));
-//     Email.send({
-//     SecureToken : "5384a422-ecfc-43c5-8c95-78005ade49fa",
-//     To : 'them@website.com',
-//     From : "you@isp.com",
-//     Subject : "This is the subject",
-//     Body : "And this is the body"
-// }).then(
-//   message => alert(message)
-// );
+      this.$router
+                .push({ path: '/admin/detail_member/'+ id })
     }
   },
   mounted(){

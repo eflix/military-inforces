@@ -72,6 +72,12 @@ a:hover{
     float: right;
     transform: translateY(2.5px);
 }
+.list-menu-top a{
+    color: #fff;
+}
+.text-loc a{
+    color: #fff;
+}
 
 
 /* menu navbar */
@@ -129,6 +135,7 @@ a:hover{
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 15;
+    white-space: nowrap;
 }
 .dropdown-content a {
     color: #000!important;
@@ -317,6 +324,11 @@ a:hover{
 .spesialis-kami p{
     margin-top: 15px;
     margin-bottom: 15px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
+    -webkit-box-orient: vertical;
 }
 .dspesialis-kami {
     height: 100%;
@@ -487,7 +499,7 @@ a:hover{
     background-color: transparent;
 }
 .body-skedinasan .card .card-body{
-    padding: 0 1.25rem;
+    padding: 0 0 0 1.25rem;
 }
 .body-skedinasan .card .nav-link{
     padding: 0.5rem 1rem 0 0;
@@ -668,6 +680,47 @@ a:hover{
     margin-bottom: 0;
 }
 
+
+/* soal gratis / coba gratis */
+.soal-gratis{
+    box-shadow: 0px 1px 12px 1px #dbbb9d;
+    border-radius: 10px;
+    padding: 30px;
+}
+.correctAnswers{
+    text-align: center;
+    margin-bottom: 30px;
+}
+.soal-gratis h1{
+    text-align: center;
+}
+.soal-gratis button:hover:enabled{
+    background-color: #EF800F;
+}
+.modal-tryout-done h2{
+    font-weight: bold;
+}
+.modal-tryout-done .modal-header{
+    display: block;
+}
+.modal-tryout-done .button-close{
+    float: right;
+    transform: translateY(-125px);
+    background: transparent;
+    box-shadow: unset;
+    border: 0;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+.modal-tryout-done .button-play{
+    background-color: rgba(100, 100, 100, 0.3);
+    padding: 10px 25px;
+    border-radius: 6px;
+    border: 0;
+}
+
+
+
 /* resposive */
 @media (max-width: 1199px){
     /* footer */
@@ -697,6 +750,15 @@ a:hover{
     }
     .list-harga-bimbingan{
         width: 21%;
+    }
+
+    /* spesial kami */
+    .spesialis-kami p{
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        line-clamp: 3;
+        -webkit-box-orient: vertical;
     }
 }
 @media (max-width: 991px){
@@ -777,6 +839,7 @@ a:hover{
     }
     .dropdown{
         padding-left: 1rem;
+        display: block;
     }
     .dropbtn{
         padding-left: 0;
@@ -795,6 +858,7 @@ a:hover{
     }
     .dropdown:hover .dropdown-content{
         margin-bottom: 0.5rem;
+        box-shadow: unset;
     }
 
       /* footer */
@@ -902,6 +966,15 @@ a:hover{
         font-size: 12px;
         line-height: 18px;
     }
+
+    /* spesial kami */
+    .spesialis-kami p{
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        line-clamp: 4;
+        -webkit-box-orient: vertical;
+    }
 }
 @media (max-width: 767px){
     /* tentang kami */
@@ -937,6 +1010,15 @@ a:hover{
     /* sekolah kedinasan */
     .tab-content{
         margin-top: 50px;
+    }
+
+    /* spesial kami */
+    .spesialis-kami p{
+        overflow: visible;
+        display: -webkit-box;
+        -webkit-line-clamp: unset;
+        line-clamp: unset;
+        -webkit-box-orient: vertical;
     }
 
 }

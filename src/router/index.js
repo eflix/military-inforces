@@ -11,6 +11,8 @@ import Registrasi from '../views/landing_page/Registrasi.vue'
 import Login from '../views/landing_page/Login.vue'
 import SyaratKetentuan from '../views/landing_page/SyaratKetentuan.vue'
 import RegistrasiSuccess from '../views/landing_page/RegistrasiSuccess.vue'
+import CobaGratis from '../views/landing_page/CobaGratis.vue'
+import ProgramBimbingan from '../views/landing_page/ProgramBimbingan.vue'
 
 Vue.use(VueRouter)
 
@@ -101,6 +103,16 @@ const routes = [
     name: 'registrasi_success',
     component: RegistrasiSuccess
   },
+  {
+    path: '/coba_gratis',
+    name: 'coba_gratis',
+    component: CobaGratis
+  },
+  {
+    path: '/program_bimbingan',
+    name: 'program_bimbingan',
+    component: ProgramBimbingan
+  },
 
   // ADMIN
   {
@@ -112,6 +124,76 @@ const routes = [
     path: '/admin/bukti_bayar',
     name: 'bukti_bayar',
     component: () => import('../Admin/views/BuktiBayar.vue'),
+  },
+  {
+    path: '/admin/input_kategori',
+    name: 'input_kategori',
+    component: () => import('../Admin/views/InputKategori.vue'),
+  },
+  {
+    path: '/admin/input_soal',
+    name: 'input_soal',
+    component: () => import('../Admin/views/InputSoal.vue'),
+  },
+  {
+    path: '/admin/add_kategori',
+    name: 'add_kategori',
+    component: () => import('../Admin/views/AddKategori.vue'),
+  },
+  {
+    path: '/admin/edit_kategori',
+    name: 'edit_kategori',
+    component: () => import('../Admin/views/EditKategori.vue'),
+  },
+  {
+    path: '/admin/add_soal',
+    name: 'add_soal',
+    component: () => import('../Admin/views/AddSoal.vue'),
+  },
+  {
+    path: '/admin/add_soal_image',
+    name: 'add_soal_image',
+    component: () => import('../Admin/views/AddSoalImage.vue'),
+  },
+  {
+    path: '/admin/edit_soal',
+    name: 'edit_soal',
+    component: () => import('../Admin/views/EditSoal.vue'),
+  },
+  {
+    path: '/admin/edit_soal_image',
+    name: 'edit_soal_image',
+    component: () => import('../Admin/views/EditSoalImage.vue'),
+  },
+  {
+    path: '/admin/input_harga_bimbingan',
+    name: 'input_harga_bimbingan',
+    component: () => import('../Admin/views/InputHargaBimbingan.vue'),
+  },
+  {
+    path: '/admin/add_harga_bimbingan',
+    name: 'add_harga_bimbingan',
+    component: () => import('../Admin/views/AddHargaBimbingan.vue'),
+  },
+  {
+    path: '/admin/edit_harga_bimbingan',
+    name: 'edit_harga_bimbingan',
+    component: () => import('../Admin/views/EditHargaBimbingan.vue'),
+  },
+  {
+    path: '/admin/input_galeri',
+    name: 'input_galeri',
+    component: () => import('../Admin/views/InputGaleri.vue'),
+  },
+  {
+    path: '/admin/add_galeri',
+    name: 'add_harga_galeri',
+    component: () => import('../Admin/views/AddGaleri.vue'),
+  },
+  {
+    path: '/admin/edit_galeri',
+    name: 'edit_galeri',
+    component: () => import('../Admin/views/EditGaleri.vue'),
   }
 ]
 

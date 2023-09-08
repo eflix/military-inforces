@@ -18,9 +18,8 @@
           <td>{{ index+1 }}</td>
           <td>{{ item.nama }}</td>
           <td>{{ item.transfer_by }}</td>
-          <!-- <td><img :src="'https://bimbelmilitaryinforce.com/api/images/bukti_bayar/living_1690880475.png'" width="100px"></td>, -->
-          <td><img :src="this.path_foto" width="100px"></td>
-          <td>{{ item.path_foto }}</td>
+          <td><img :src="'https://bimbelmilitaryinforce.com/api/images/bukti_bayar/living_1690880475.png'" width="100px"></td>
+          <!-- <td>{{ item.path_foto }}</td> -->
         </tr>
       </tbody>
     </table>
@@ -35,7 +34,6 @@ data(){
     return{
       username: this.$session.get("username")?this.$session.get("username"):"",
       member:[],
-      path_foto :''
     }
   },
   methods:{
@@ -54,10 +52,7 @@ data(){
         }
     })
   .then( (response) => {
-    console.log(response.data.data[0])
-    // console.log(count(response.data.data));
-    this.path_foto = 'https://bimbelmilitaryinforce.com/api/images/bukti_bayar/'+ response.data.data[0]['path_foto']
-    console.log(this.path_foto);
+    console.log(response.data)
     this.setMember(response.data)
   })
   .catch((error) => console.log(error));
