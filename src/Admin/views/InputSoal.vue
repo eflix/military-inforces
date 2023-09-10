@@ -31,7 +31,8 @@
             <td>{{ item.kunci_jawaban }}</td>
             <td>0</td>
             <td>
-                <a href="" class="edit-opsi"><i class="bx bx-edit"></i></a>
+                <button class="edit-opsi" @click="() => edit(item.id)"><i class="bx bx-edit"></i></button>
+                <!-- <a href="" class="edit-opsi" @click="() => edit(item.id)"><i class="bx bx-edit"></i></a> -->
                 <a href="" class="delete-opsi"><i class="bx bx-trash"></i></a>
             </td>
           </tr>
@@ -54,6 +55,10 @@
         setSoal(data){
           this.soal = data
         },
+        edit: function (id) {
+          this.$router
+                    .push({ path: '/admin/edit_soal/'+ id})
+        }
       },
       mounted(){
         axios.get('https://bimbel-militaryinforces.com/api/admin/soal/all_soal', {

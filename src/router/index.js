@@ -156,7 +156,7 @@ const routes = [
     component: () => import('../Admin/views/AddSoalImage.vue'),
   },
   {
-    path: '/admin/edit_soal',
+    path: '/admin/edit_soal/:id_soal',
     name: 'edit_soal',
     component: () => import('../Admin/views/EditSoal.vue'),
   },
