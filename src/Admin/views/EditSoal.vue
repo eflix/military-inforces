@@ -1,15 +1,14 @@
 <template>
     <div class="container add-page">
         <h4>Edit Daftar Soal</h4>
-        {{pertanyaan.id_category}}
+        <!-- {{pertanyaan.id_category}} -->
         <form>
-            <input type="hidden" name="id" :value
-            ="pertanyaan.id">
+            <input type="hidden" name="id" :value="pertanyaan.id">
             <div class="form-group row">
                 <label for="" class="col-sm-3 col-form-label">Masukan Nama Kategori Soal</label>
                 <div class="col-sm-9"> 
                     <select name="id_category" v-model="input.id_category" class="form-control">
-                        <option v-for="(item, index) in category.data" :key="index" v-bind:value="item.id" :selected="parseInt(item.id) == parseInt(1)">{{item.nama_category}}</option>
+                        <option v-for="(item, index) in category.data" :key="index" :value="item.id" :selected="item.id == 4">{{item.nama_category}}</option>
                     </select>
                 </div>
             </div>
@@ -53,6 +52,12 @@
                         <option  :selected="'d' == pertanyaan.kunci_jawaban" value="d">D</option>
                         <!-- <option value="e">E</option> -->
                     </select>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="" class="col-sm-3 col-form-label">Penjelasan</label>
+                <div class="col-sm-9">
+                    <textarea name="penjelasan" v-model="input.penjelasan" class="form-control" id="" placeholder="Penjelasan" rows="5"></textarea>
                 </div>
             </div>
             <div class="form-group row">
@@ -113,7 +118,7 @@ import axios from 'axios';
                     d : this.input.d,
                     e : this.input.e,
                     kunci_jawaban : this.input.kunci_jawaban,
-                    penjelasan : '',
+                    penjelasan : this.input.penjelasan,
                     score : this.input.score,
                     }, {
                 headers: {
@@ -165,6 +170,7 @@ import axios from 'axios';
       .then( (response1) => {
         console.log(response1.data)
         this.setPertanyaan(response1.data.data[0])
+        this.input.id_category = response1.data.data[0].id_category
         this.input.text_pertanyaan = response1.data.data[0].text_pertanyaan
         this.input.a = response1.data.data[0].a
         this.input.b = response1.data.data[0].b

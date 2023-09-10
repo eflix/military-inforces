@@ -15,8 +15,8 @@
             <td>{{ index+1 }}</td>
             <td>{{ item.nama_category }}</td>
             <td>
-                <a href="" class="edit-opsi"><i class="bx bx-edit"></i></a>
-                <a href="" class="delete-opsi"><i class="bx bx-trash"></i></a>
+                <button class="edit-opsi" @click="() => edit(item.id)"><i class="bx bx-edit"></i></button>
+                <button class="delete-opsi" @click="() => hapus(item.id)"><i class="bx bx-trash"></i></button>
             </td>
           </tr>
         </tbody>
@@ -38,6 +38,35 @@
         setCategory(data){
           this.category = data
         },
+        edit: function (id) {
+          this.$router
+                    .push({ path: '/admin/edit_kategori/'+ id})
+        },
+        hapus: function (id) {
+          axios.post('https://bimbel-militaryinforces.com/api/admin/landing_page/do_delete_category', 
+            {
+                  id : id,
+              },
+              {
+                headers: {
+                  "Content-type": "text/plain",
+                  }
+              })
+            .then( 
+              (response) => {
+                  // console.log(response.data)
+                  const status = response.data.status
+                  const message = response.data.message
+                  
+                  alert(message)
+
+                  if (status == 1) {
+                      location.reload();
+                  } 
+              }
+            )
+            .catch((error) => console.log(error));
+        }
       },
       mounted(){
         axios.get('https://bimbel-militaryinforces.com/api/admin/landing_page/all_category', {

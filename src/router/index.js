@@ -141,7 +141,7 @@ const routes = [
     component: () => import('../Admin/views/AddKategori.vue'),
   },
   {
-    path: '/admin/edit_kategori',
+    path: '/admin/edit_kategori/:id_category',
     name: 'edit_kategori',
     component: () => import('../Admin/views/EditKategori.vue'),
   },

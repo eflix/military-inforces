@@ -29,11 +29,12 @@
             <td>{{ item.d }}</td>
             <td>{{ item.e }}</td>
             <td>{{ item.kunci_jawaban }}</td>
-            <td>0</td>
+            <td>{{ item.score }}</td>
             <td>
                 <button class="edit-opsi" @click="() => edit(item.id)"><i class="bx bx-edit"></i></button>
+                <button class="delete-opsi" @click="() => hapus(item.id)"><i class="bx bx-trash"></i></button>
                 <!-- <a href="" class="edit-opsi" @click="() => edit(item.id)"><i class="bx bx-edit"></i></a> -->
-                <a href="" class="delete-opsi"><i class="bx bx-trash"></i></a>
+                <!-- <a href="" class="delete-opsi"><i class="bx bx-trash"></i></a> -->
             </td>
           </tr>
         </tbody>
@@ -49,6 +50,9 @@
         return{
           username: this.$session.get("username")?this.$session.get("username"):"",
           soal:[],
+          perPage: 3,
+        currentPage: 1,
+        rows: 12
         }
       },
       methods:{
@@ -58,6 +62,31 @@
         edit: function (id) {
           this.$router
                     .push({ path: '/admin/edit_soal/'+ id})
+        },
+        hapus: function (id) {
+          axios.post('https://bimbel-militaryinforces.com/api/admin/soal/do_delete_soal', 
+            {
+                  id : id,
+              },
+              {
+                headers: {
+                  "Content-type": "text/plain",
+                  }
+              })
+            .then( 
+              (response) => {
+                  // console.log(response.data)
+                  const status = response.data.status
+                  const message = response.data.message
+                  
+                  alert(message)
+
+                  if (status == 1) {
+                      location.reload();
+                  } 
+              }
+            )
+            .catch((error) => console.log(error));
         }
       },
       mounted(){
