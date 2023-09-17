@@ -12,7 +12,7 @@
             <th>Jawaban B</th>
             <th>Jawaban C</th>
             <th>Jawaban D</th>
-            <th>Jawaban E</th>
+            <!-- <th>Jawaban E</th> -->
             <th>Jawaban Benar</th>
             <th>Score</th>
             <th>Opsi</th>
@@ -21,13 +21,13 @@
         <tbody>
           <tr v-for="(item, index) in soal.data" :key="index">
             <td>{{ index+1 }}</td>
-            <td></td>
+            <td>{{ item.nama_category }}</td>
             <td>{{ item.text_pertanyaan }}</td>
             <td>{{ item.a }}</td>
             <td>{{ item.b }}</td>
             <td>{{ item.c }}</td>
             <td>{{ item.d }}</td>
-            <td>{{ item.e }}</td>
+            <!-- <td>{{ item.e }}</td> -->
             <td>{{ item.kunci_jawaban }}</td>
             <td>{{ item.score }}</td>
             <td>

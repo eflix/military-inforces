@@ -39,7 +39,7 @@
             <div class="form-group row">
                 <label for="" class="col-sm-3 col-form-label">Jawaban D</label>
                 <div class="col-sm-9">
-                    <textarea name="e" v-model="input.e" class="form-control" id="" placeholder="Jawaban D" rows="5"></textarea>
+                    <textarea name="d" v-model="input.d" class="form-control" id="" placeholder="Jawaban D" rows="5"></textarea>
                 </div>
             </div>
             <div class="form-group row">
@@ -121,7 +121,7 @@ import axios from 'axios';
                     b : this.input.b,
                     c : this.input.c,
                     d : this.input.d,
-                    e : this.input.e,
+                    e : '',
                     kunci_jawaban : this.input.kunci_jawaban,
                     penjelasan : this.input.penjelasan,
                     score : this.input.score,
@@ -164,30 +164,4 @@ import axios from 'axios';
       .catch((error) => console.log(error));
       }
     }
-// import Select2 from 'v-select2-component';
-// // import Multiselect from 'vue-multiselect'
-
-
-// export default {
-//     // declare Select2Component
-//     components: {Select2},
-//     data() {
-//         return {
-//             myValue: '',
-//             myOptions: ['op1', 'op2', 'op3'] // or [{id: key, text: value}, {id: key, text: value}]
-//         }
-//     },
-//     methods: {
-//         myChangeEvent(val){
-//             console.log(val);
-//         },
-//         mySelectEvent({id, text}){
-//             console.log({id, text})
-//         }
-//     }
-// }
-
-// $(".js-example-tags").select2({
-//   tags: true
-// });
 </script>
