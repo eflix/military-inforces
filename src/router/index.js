@@ -46,6 +46,11 @@ const routes = [
     name: 'Soal Ujian',
     component: () => import('../Member/views/SoalUjian.vue'),
   },
+  {
+    path: '/member/modul',
+    name: 'Modul',
+    component: () => import('../Member/views/Modul.vue'),
+  },
 
   // LANDING PAGE
   {
@@ -194,7 +199,12 @@ const routes = [
     path: '/admin/edit_galeri',
     name: 'edit_galeri',
     component: () => import('../Admin/views/EditGaleri.vue'),
-  }
+  },
+  {
+    path: '/admin/modul',
+    name: 'Modul',
+    component: () => import('../Admin/views/AddModul.vue'),
+  },
 ]
 
 const router = new VueRouter({

@@ -130,6 +130,15 @@
             </router-link>
           </li>
 
+          <li id="links_7">
+            <router-link to="/admin/modul" >
+              <i class="bx bx-download"></i>
+              <span class="links_name">Modul</span>
+              <span data-target="links_7"
+              class="tooltip">Modul</span>
+            </router-link>
+          </li>
+
           <!-- <li id="links_3">
             <router-link to="/member/soal_ujian" >
               <i class="bx bx-book-open"></i>

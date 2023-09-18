@@ -112,6 +112,15 @@
             </router-link>
           </li>
 
+          <li id="links_5">
+            <router-link to="/member/modul" >
+              <i class="bx bx-download"></i>
+              <span class="links_name">Modul</span>
+              <span data-target="links_5"
+              class="tooltip">Modul</span>
+            </router-link>
+          </li>
+
           <li id="links_100">
             <a href="#" class="" @click="redirectReload">
               <i class="bx bx-log-out"></i>
