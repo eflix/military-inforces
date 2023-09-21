@@ -1,6 +1,9 @@
 <template>
   <div class="container mt-3">
     <h3>Daftar Modul</h3>
+    <!-- <a href="https://bimbel-militaryinforces.com/api/assets/modul/test.pdf" download>DOWNLOAD</a> -->
+    <!-- <a href="https://bimbel-militaryinforces.com/api/assets/modul/test.pdf" download>DOWNLOAD</a> -->
+    <button v-on:click="clickedDownload()">download</button>
     <b-table
       id="table-transition-example"
       :items="products.data"
@@ -9,7 +12,13 @@
       small
       primary-key="nama"
       :tbody-transition-props="transProps"
-    ></b-table>
+    >
+    <template v-slot:cell(actions)="">
+    <b-button size="sm" class="mr-2">
+           Details
+        </b-button>
+    </template>
+    </b-table>
     <!-- {{products.data}} -->
 
 </div>
@@ -29,13 +38,18 @@ data(){
         },
         fields: [
         {key : "nama", sortable: true},
-        {key : "jabatan", sortable: true}
+        {key : "jabatan", sortable: true},
+        {key : "actions", sortable: false}
         ]
     }
   },
   methods:{
      setProducts(data){
       this.products = data
+    },
+    clickedDownload(){
+        var fileName='https://bimbel-militaryinforces.com/api/assets/modul/test.pdf';
+      window.open(fileName, 'Download');
     }
   },
   mounted(){
