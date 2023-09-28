@@ -37,21 +37,18 @@ export default {
         // if (this.input.category != '') {
              var formData = new FormData();
             var imagefile = document.querySelector('#file');
+        // imagefile.files[0]['cek'] = 'cek';
             formData.append("file", imagefile.files[0]);
-        // this.formData.append("nama_modul", this.input.nama_modul);
+            formData.append("nama_modul", this.input.nama_modul);
 
-            console.log(imagefile.files[0]['name']);
-
-            // this.input.path_foto = imagefile.files[0]['name']
             // axios.post('https://bimbel-militaryinforces.com/api/admin/landing_page/add_category', {
             axios.post('http://localhost/api2/military_inforces/admin/member/add_modul',
-                  formData,{nama_modul:this.input.nama_modul}
+            formData
                 , {
               headers: {
-                'Content-Type': 'multipart/form-data'
-                // "Content-type": "text/plain",
-                // "Access-Control-Allow-Origin": "*",
+                'Content-Type': 'multipart/form-data',
                 },
+
             })
           .then( 
             (response) => {
