@@ -31,10 +31,8 @@
             <td>{{ item.kunci_jawaban }}</td>
             <td>{{ item.score }}</td>
             <td>
-                <button class="edit-opsi" @click="() => edit(item.id)"><i class="bx bx-edit"></i></button>
+                <button class="edit-opsi" @click="() => edit(item.id,item.tipe)"><i class="bx bx-edit"></i></button>
                 <button class="delete-opsi" @click="() => hapus(item.id)"><i class="bx bx-trash"></i></button>
-                <!-- <a href="" class="edit-opsi" @click="() => edit(item.id)"><i class="bx bx-edit"></i></a> -->
-                <!-- <a href="" class="delete-opsi"><i class="bx bx-trash"></i></a> -->
             </td>
           </tr>
         </tbody>
@@ -59,9 +57,14 @@
         setSoal(data){
           this.soal = data
         },
-        edit: function (id) {
-          this.$router
-                    .push({ path: '/admin/edit_soal/'+ id})
+        edit: function (id,tipe) {
+          if (tipe == 0) {
+            this.$router
+                      .push({ path: '/admin/edit_soal/'+ id})
+          } else {
+            this.$router
+                      .push({ path: '/admin/edit_soal_gambar/'+ id})
+          }
         },
         hapus: function (id) {
           axios.post('https://bimbel-militaryinforces.com/api/admin/soal/do_delete_soal', 
