@@ -51,6 +51,11 @@ const routes = [
     name: 'Modul',
     component: () => import('../Member/views/Modul.vue'),
   },
+  {
+    path: '/member/ujian',
+    name: 'Ujian',
+    component: () => import('../Member/views/Ujian.vue'),
+  },
 
   // LANDING PAGE
   {

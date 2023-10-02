@@ -1,65 +1,70 @@
 <template>
     <div class="container add-page">
         <form>
+            <!-- {{category.data}} -->
             <div class="form-group row mt-3">
                 <label for="" class="col-sm-3 col-form-label">Masukan Nama Kategori Soal</label>
                 <div class="col-sm-9">
-                    <select class="form-control">
-                        <select name="id_category" v-model="input.id_category" class="form-control">
-                            <option v-for="(item, index) in category.data" :key="index" :value="item.id" :selected="item.id == 4">{{item.nama_category}}</option>
-                        </select>
+                    <select name="id_category" v-model="input.id_category" class="form-control">
+                        <option v-for="(item, index) in category.data" :key="index" :value="item.id" :selected="item.id == 4">{{item.nama_category}}</option>
                     </select>
                 </div>
             </div>
             <div class="form-group row">
                 <label for="" class="col-sm-3 col-form-label">Masukan Soal</label>
                 <div class="col-sm-9">
-                    <input type="file" id="text_pertanyaan" name="text_pertanyaan">
+                    <input type="file" id="soal" name="soal">
+                    <div><label for="">{{input.text_pertanyaan}}</label></div>
                 </div>
             </div>
             <div class="form-group row">
                 <label for="" class="col-sm-3 col-form-label">Jawaban A</label>
                 <div class="col-sm-9">
                     <input type="file" id="a" name="a">
+                    <div><label for="">{{input.a}}</label></div>
                 </div>
             </div>
             <div class="form-group row">
                 <label for="" class="col-sm-3 col-form-label">Jawaban B</label>
                 <div class="col-sm-9">
                     <input type="file" id="b" name="b">
+                    <div><label for="">{{input.b}}</label></div>
                 </div>
             </div>
             <div class="form-group row">
                 <label for="" class="col-sm-3 col-form-label">Jawaban C</label>
                 <div class="col-sm-9">
                     <input type="file" id="c" name="c">
+                    <div><label for="">{{input.c}}</label></div>
                 </div>
             </div>
             <div class="form-group row">
                 <label for="" class="col-sm-3 col-form-label">Jawaban D</label>
                 <div class="col-sm-9">
                     <input type="file" id="d" name="d">
+                    <div><label for="">{{input.d}}</label></div>
                 </div>
             </div>
             <div class="form-group row">
                 <label for="" class="col-sm-3 col-form-label">Jawaban yang benar</label>
                 <div class="col-sm-9" >
-                    <select class="form-control" v-model="input.kunci_jawaban">
-                        <option>A</option>
-                        <option>B</option>
-                        <option>C</option>
-                        <option>D</option>
+                    <select name="kunci_jawaban" v-model="input.kunci_jawaban" class="form-control">
+                        <option  :selected="'a' == pertanyaan.kunci_jawaban" value="a">A</option>
+                        <option :selected="'b' == pertanyaan.kunci_jawaban" value="b">B</option>
+                        <option :selected="'c' == pertanyaan.kunci_jawaban" value="c">C</option>
+                        <option  :selected="'d' == pertanyaan.kunci_jawaban" value="d">D</option>
+                        <!-- <option value="e">E</option> -->
                     </select>
                 </div>
             </div>
             <div class="form-group row">
                 <label for="" class="col-sm-3 col-form-label">Jumlah Score</label>
                 <div class="col-sm-9">
-                    <input type="number" class="form-control" id="" placeholder="score">
+                    <input type="number" v-model="input.score" class="form-control" id="" placeholder="score">
                 </div>
             </div>
             <div class="text-right mt-5">
-                <button class="btn-save">Simpan</button>
+                <button class="btn-save" v-on:click.prevent = "save()">Simpan</button>
                 <a class="btn-kembali" href="/admin/input_soal">Kembali</a>
             </div>
         </form>
@@ -98,7 +103,7 @@ import axios from 'axios';
         setPertanyaan(data){
           this.pertanyaan = data
         },
-        add(){
+        save(){
             if (this.input.id_category != '') {
                 var formData = new FormData();
                 var soal = document.querySelector('#soal');
@@ -107,6 +112,7 @@ import axios from 'axios';
                 var c = document.querySelector('#c');
                 var d = document.querySelector('#d');
 
+                formData.append("id", this.id);
                 formData.append("id_category", this.input.id_category);
                 formData.append("soal", soal.files[0]);
                 formData.append("a", a.files[0]);
@@ -116,7 +122,7 @@ import axios from 'axios';
                 formData.append("kunci_jawaban", this.input.kunci_jawaban);
                 formData.append("score", this.input.score);
 
-                axios.post('https://bimbel-militaryinforces.com/api/admin/soal/add_soal_gambar', 
+                axios.post('https://bimbel-militaryinforces.com/api/admin/soal/do_edit_soal_gambar', 
                     formData
                     , {
                     headers: {
