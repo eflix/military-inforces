@@ -22,7 +22,7 @@
     <!-- {{jadwal.data}} -->
 
     <button v-if="jadwal.data" class="btn btn-success" v-on:click.prevent = "returnUjian()"> Lanjutkan Ujian </button>
-    <button v-else class="btn btn-success" v-on:click.prevent = "getPertanyaan()"> Mulai Ujian </button>
+    <button v-else class="btn btn-success" v-on:click.prevent = "setDetailUjian()"> Mulai Ujian </button>
     <!-- <b-table
       id="table-transition-example"
       :items="Jadwal.data"
@@ -55,17 +55,19 @@ data(){
     }
   },
   methods:{
-     getPertanyaan(){
-        axios.get('http://localhost/api2/military_inforces/member/member/set_ujian', {
+     setDetailUjian(){
+        axios.post('https://bimbel-militaryinforces.com/api/member/ujian/set_detail_ujian', 
+        {id_paket : this.id_paket,id_user:this.id_user},
+        {
           headers: {
-            "Content-type": "application/json",
+            "Content-type": "text/plain",
             }
         })
       .then( 
-        (response) => console.log(response.data.message),
-      this.$router
-                .push({ path: '/member/ujian' })
-                .then(() => { this.$router.go() })
+        (response) => console.log(response.data),
+      // this.$router
+      //           .push({ path: '/member/ujian' })
+      //           .then(() => { this.$router.go() })
       )
       .catch((error) => console.log(error));
      },
@@ -107,7 +109,7 @@ data(){
   },
   mounted(){
     axios.post('https://bimbel-militaryinforces.com/api/member/ujian/temp_ujian', 
-    {id_user : 1},
+    {id_user : this.id_user},
     {
       headers: {
         "Content-type": "text/plain",
