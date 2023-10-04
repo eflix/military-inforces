@@ -7,9 +7,9 @@
     {{currentNo = parseInt(TempUjian.data[0]['last_number'])}} -->
     <b-row>
         <b-col sm="10" class="mb-9">
-          <!-- <strong> No. {{parseInt(Pertanyaan.data[0]['no_urut'])}}</strong> -->
+          <strong> No. {{parseInt(Pertanyaan.data[0]['no_urut'])}}</strong>
           <div class="pertanyaan">
-            <!-- <h5>{{Pertanyaan.data[0]['text_pertanyaan']}}</h5>
+            <h5>{{Pertanyaan.data[0]['text_pertanyaan']}}</h5>
 
             <input type="radio" id="a" value="a" v-model="answer" />
             <label for="a"> <span>A. {{Pertanyaan.data[0]['a']}}</span></label> <br />
@@ -23,22 +23,22 @@
             <input type="radio" id="d" value="d" v-model="answer" />
             <label for="d"><span>D. {{Pertanyaan.data[0]['d']}}</span></label> <br />
 
-            <input type="radio" id="e" value="e" v-model="answer" />
+            <!-- <input type="radio" id="e" value="e" v-model="answer" />
             <label for="e"><span>E. {{Pertanyaan.data[0]['e']}}</span></label> <br /> -->
 
           </div>
           <div class="tombol">
-            <!-- <button class="btn btn-warning" v-if="parseInt(Pertanyaan.data[0]['no_urut'])>1" v-on:click.prevent="getPertanyaanByNo(parseInt(Pertanyaan.data[0]['no_urut'])-1,parseInt(TempUjian.data[0]['id']))">Sebelumnya</button>
+            <button class="btn btn-warning" v-if="parseInt(Pertanyaan.data[0]['no_urut'])>1" v-on:click.prevent="getPertanyaanByNo(parseInt(Pertanyaan.data[0]['no_urut'])-1,parseInt(TempUjian.data[0]['id']))">Sebelumnya</button>
             <button class="btn btn-success" v-if="parseInt(Pertanyaan.data[0]['no_urut'])<parseInt(TempUjian.data[0]['total_number'])" v-on:click.prevent="getPertanyaanByNo(parseInt(Pertanyaan.data[0]['no_urut'])+1,parseInt(TempUjian.data[0]['id']))">Selanjutnya</button>
             <button class="btn btn-success" v-if="answer && parseInt(Pertanyaan.data[0]['no_urut'])<parseInt(TempUjian.data[0]['total_number'])" v-on:click.prevent="saveNext(parseInt(TempUjian.data[0]['id']),parseInt(Pertanyaan.data[0]['id']),answer,parseInt(Pertanyaan.data[0]['no_urut']))">Simpan & Selanjutnya</button>
-            <button class="btn btn-success" v-if="answer && parseInt(Pertanyaan.data[0]['no_urut'])>=parseInt(TempUjian.data[0]['total_number'])" v-on:click.prevent="saveFinish(parseInt(TempUjian.data[0]['id']))">Simpan & Selesai</button> -->
+            <button class="btn btn-success" v-if="answer && parseInt(Pertanyaan.data[0]['no_urut'])>=parseInt(TempUjian.data[0]['total_number'])" v-on:click.prevent="saveFinish(parseInt(TempUjian.data[0]['id']))">Simpan & Selesai</button>
           </div>
         </b-col>
         <b-col sm="2" class="no-soal">
-          <!-- <span v-for="(row,i) in TempUjian.allPertanyaan" :key="i">
+          <span v-for="(row,i) in TempUjian.allPertanyaan" :key="i">
             <button v-if="row.jawaban" class="btn btn-success" v-on:click.prevent="getPertanyaanByNo(parseInt(row.no_urut),parseInt(TempUjian.data[0]['id']))"> {{row.no_urut}}</button>
             <button v-else class="btn btn-danger" v-on:click.prevent="getPertanyaanByNo(parseInt(row.no_urut),parseInt(TempUjian.data[0]['id']))"> {{row.no_urut}}</button>
-          </span> -->
+          </span>
         </b-col>
     </b-row>
   </div>
@@ -148,9 +148,9 @@ methods: {
     })
   .then((response) => {
     this.setTempUjian(response.data)
+    console.log(response.data)
     var date = new Date(response.data.data[0]['tanggal_ujian'] + ' ' + response.data.data[0]['finish_time'])
     this.countDownToTime = date.getTime()
-    console.log(response.data)
     var last_number = response.data.data[0]['last_number']
     var id_ujian = response.data.data[0]['id']
     axios.post('https://bimbel-militaryinforces.com/api/member/member/pertanyaanByNo', 
@@ -163,7 +163,7 @@ methods: {
         )
       .then( 
         (response) => {
-          console.log(response.data);
+          // console.log(response.data);
           this.setPertanyaan(response.data)
           if(response.data.data[0]['jawaban']){
             this.answer = response.data.data[0]['jawaban']

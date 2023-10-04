@@ -46,7 +46,7 @@ data(){
       jadwal:[],
       paket:[],
       nama_paket:'',
-      jumlah_soal:'',
+      jumlah_soal:0,
       waktu:0,
       id_paket:0,
       deskripsi:'',
@@ -57,7 +57,7 @@ data(){
   methods:{
      setDetailUjian(){
         axios.post('https://bimbel-militaryinforces.com/api/member/ujian/set_detail_ujian', 
-        {id_paket : this.id_paket,id_user:this.id_user},
+        {id_paket : this.id_paket,id_user:this.id_user,jumlah_soal:this.jumlah_soal,waktu:this.waktu},
         {
           headers: {
             "Content-type": "text/plain",
@@ -65,9 +65,9 @@ data(){
         })
       .then( 
         (response) => console.log(response.data),
-      // this.$router
-      //           .push({ path: '/member/ujian' })
-      //           .then(() => { this.$router.go() })
+      this.$router
+                .push({ path: '/member/ujian' })
+                .then(() => { this.$router.go() })
       )
       .catch((error) => console.log(error));
      },
@@ -85,8 +85,8 @@ data(){
     onChange(e){
       // this.nama_paket = e.target.value
       this.id_paket = e.target.value
-      this.jumlah_soal = 100
-      this.waktu = 120
+      // this.jumlah_soal = 100
+      // this.waktu = 120
 
       axios.post('https://bimbel-militaryinforces.com/api/member/ujian/paket_by_id', 
         {id_paket : this.id_paket,id_user:this.id_user},
